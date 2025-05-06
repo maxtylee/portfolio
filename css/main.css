@@ -354,7 +354,8 @@ h5 {
 }
 
 .service-card-title {
-  text-align: center;
+  /* text-align: center; */
+  text-align: left;
   white-space: nowrap; /* Force it to stay on one line */
   text-transform: uppercase;
   letter-spacing: 2px;
