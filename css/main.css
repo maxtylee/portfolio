@@ -366,7 +366,8 @@ h5 {
 .service-card p {
   font-size: 16px;
   line-height: 1.7;
-  text-align: center;
+  /* text-align: center; */
+  text-align: left;
 }
 
 /* Works */
