@@ -392,7 +392,7 @@ h5 {
   overflow: hidden;
   display: block;
   max-width: 510px;
-  height: 250px;
+  /* height: 250px; */
 }
 
 .project-box a {
