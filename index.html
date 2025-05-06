@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>John Sample</title>
+    <title id="dynamic-title">Loading...</title>
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/media.css" />
@@ -439,5 +439,11 @@
       referrerpolicy="no-referrer"
     ></script>
     <script type="module" src="js/main.js"></script>
+    <script>
+      const title = document.getElementById("dynamic-title");
+      const today = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      title.textContent = today.toLocaleDateString(undefined, options); // Example: May 5, 2025
+    </script>
   </body>
 </html>
