@@ -27,7 +27,7 @@
           data-aos="fade-down"
           data-aos-duration="1000"
           >Loading date...</a>
-          
+
           <nav id="nav" class="nav">
             <ul class="nav-list" data-aos="fade-down" data-aos-duration="1000">
               <li class="nav-item">
@@ -441,10 +441,11 @@
     ></script>
     <script type="module" src="js/main.js"></script>
     <script>
-      const title = document.getElementById("dynamic-title");
+      const logo = document.getElementById("dynamic-logo");
       const today = new Date();
       const options = { year: 'numeric', month: 'long', day: 'numeric' };
-      title.textContent = today.toLocaleDateString(undefined, options); // Example: May 5, 2025
+      logo.textContent = today.toLocaleDateString(undefined, options); // e.g., May 5, 2025
     </script>
+
   </body>
 </html>
