@@ -415,12 +415,12 @@ h5 {
   width: 100%;
 }
 
-/* .project-img {
+.project-img {
   transform: scale(1);
   width: 100%;
   transition: all 2s cubic-bezier(0.23, 1, 0.32, 1) 0s;
-} */
-.project-img {
+}
+.project-img-esc {
   /* width: 100%; */
   height: 100%;
   object-fit: cover;
