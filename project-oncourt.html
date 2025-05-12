@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OnCourt Athletic Tracker – Max Lee</title>
 
-  <!-- Social Meta Tags (update if hosting live) -->
+  <!-- Meta Tags for Social Media Sharing -->
   <meta name="description" content="OnCourt is a wearable tennis training tracker developed by Max Lee." />
   <meta property="og:title" content="OnCourt Athletic Tracker – Max Lee" />
   <meta property="og:description" content="Wearable motion analysis for tennis swing training." />
@@ -16,8 +16,11 @@
   <meta name="twitter:image" content="img/works/OnCourt.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
+  <!-- Favicons and Fonts -->
   <link rel="icon" href="static/images/favicon.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="static/css/bulma.min.css" />
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css" />
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css" />
@@ -26,15 +29,13 @@
 </head>
 
 <body>
-
   <!-- Header -->
   <section class="hero is-light">
     <div class="hero-body">
       <div class="container has-text-centered">
-        <a href="index.html" class="button is-link is-light is-rounded">← Back to Home</a>
-        <h1 class="title is-1" style="margin-top: 1rem;">Max Lee</h1>
+        <a href="index.html" class="button is-link is-light is-rounded">&larr; Back to Home</a>
+        <h1 class="title is-1">Max Lee</h1>
         <h2 class="subtitle is-4">Mechanical Engineer | UC Berkeley</h2>
-
         <div class="social-icons" style="margin-top: 1rem;">
           <a href="https://linkedin.com/in/maxtlee" target="_blank" title="LinkedIn">
             <span class="icon is-medium">
@@ -46,50 +47,63 @@
     </div>
   </section>
 
-  <!-- Project Hero -->
+  <!-- Teaser Section -->
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <img src="img/works/OnCourt.png" alt="OnCourt Project Image" style="max-width: 100%; border-radius: 20px;" />
-        <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-          A lightweight wearable for real-time wrist motion tracking and swing correction in tennis.
+        <video poster="img/works/OnCourt.png" autoplay controls muted loop width="100%">
+          <source src="static/videos/on_court_demo.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          Wrist-mounted motion tracker with real-time feedback for tennis athletes.
         </h2>
       </div>
     </div>
   </section>
 
-  <!-- Abstract -->
+  <!-- Abstract Section -->
   <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Project Overview</h2>
+          <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              OnCourt is a wrist-mounted wearable device built to analyze tennis forehand swings. Designed with the MPU6050 IMU and ESP32 microcontroller, it tracks rotational motion in real-time and displays live feedback on an OLED screen.
+              OnCourt is a wearable wrist-tracker designed to analyze tennis forehand swings. It uses an MPU6050 sensor and ESP32 microcontroller with an OLED screen to record and display movement data. The device visualizes motion curves and highlights inconsistencies in swings, helping players improve their technique.
             </p>
-            <p>
-              The enclosure was custom-modeled in CAD and 3D-printed using PLA, paired with a quick-release wristband. Data collected from beginner and experienced players highlighted variations in wrist stability and rotational smoothness, enabling players to improve form through quantitative feedback.
-            </p>
-            <p><strong>Skills:</strong> Embedded Systems · Mechanical Design · Sensor Integration · Rapid Prototyping · Data Visualization</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Demo Video -->
+  <!-- Image Carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <img src="static/images/carousel1.jpg" alt="Prototype Image 1" />
+            <h2 class="subtitle has-text-centered">Prototype with wrist strap and OLED display.</h2>
+          </div>
+          <div class="item">
+            <img src="static/images/carousel2.jpg" alt="Prototype Image 2" />
+            <h2 class="subtitle has-text-centered">Internal circuit layout and sensor housing.</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- YouTube Video Section -->
   <section class="hero is-small is-light">
     <div class="hero-body">
       <div class="container">
-        <h2 class="title is-3">Demo Video</h2>
+        <h2 class="title is-3">Video Presentation</h2>
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
             <div class="publication-video">
-              <video controls muted style="width: 100%; border-radius: 12px;">
-                <source src="static/videos/on_court_demo.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
           </div>
         </div>
@@ -97,22 +111,47 @@
     </div>
   </section>
 
-  <!-- Image Carousel (Optional - update with your photos) -->
+  <!-- Video Carousel -->
   <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
-        <h2 class="title is-3">Prototype Highlights</h2>
+        <h2 class="title is-3">Field Tests</h2>
         <div id="results-carousel" class="carousel results-carousel">
           <div class="item">
-            <img src="static/images/carousel1.jpg" alt="Mounting view" />
-            <h2 class="subtitle has-text-centered">Wrist-mounted prototype with strap and OLED.</h2>
+            <video autoplay controls muted loop width="100%">
+              <source src="static/videos/carousel1.mp4" type="video/mp4">
+            </video>
           </div>
           <div class="item">
-            <img src="static/images/carousel2.jpg" alt="IMU board" />
-            <h2 class="subtitle has-text-centered">Internal hardware layout.</h2>
+            <video autoplay controls muted loop width="100%">
+              <source src="static/videos/carousel2.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Poster Section -->
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title">Poster</h2>
+        <iframe src="static/pdfs/sample.pdf" width="100%" height="550"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- BibTeX Section -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{lee2025oncourt,
+  author = {Max Lee},
+  title = {OnCourt: Wearable Motion Tracker for Tennis Swing Analysis},
+  year = {2025},
+  url = {https://maxlee.framer.website/project-oncourt.html}
+}</code></pre>
     </div>
   </section>
 
@@ -123,9 +162,7 @@
         <div class="column is-8">
           <div class="content has-text-centered">
             <p>
-              This project page is styled using the
-              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>,
-              adapted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project.
+              Built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>, adapted from <a href="https://nerfies.github.io" target="_blank">Nerfies</a>.
             </p>
           </div>
         </div>
@@ -133,7 +170,7 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- JS Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="static/js/bulma-carousel.min.js"></script>
   <script>
