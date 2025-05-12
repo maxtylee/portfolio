@@ -364,25 +364,26 @@
           </p>
         </div>
 
-        <form class="contactForm" data-aos="zoom-in" data-aos-duration="1000">
+        <form
+          action="https://formspree.io/f/xanopdwl"
+          method="POST"
+          class="contactForm"
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+        >
           <div class="input-box">
             <input type="text" name="name" placeholder="Name" required />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              required
-            />
+            <input type="email" name="email" placeholder="Email Address" required />
           </div>
 
           <textarea
             name="message"
-            id=""
             cols="30"
             rows="10"
             placeholder="Your Message"
             required
           ></textarea>
+
           <div
             class="contact-button"
             data-aos="fade-zoom-in"
@@ -390,11 +391,12 @@
             data-aos-delay="500"
             data-aos-duration="1000"
           >
-            <button href="#!" class="btn btn-red" name="submit" type="submit">
+            <button type="submit" class="btn btn-red">
               Send Message
             </button>
           </div>
         </form>
+
         <div class="response"></div>
       </div>
     </section>
