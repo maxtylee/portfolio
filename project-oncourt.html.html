@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OnCourt Athletic Tracker – Max Lee</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header id="header" class="header">
+      <div class="container container-lg">
+        <div class="header-nav">
+          <a href="index.html" class="logo" id="dynamic-logo">← Back to Home</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="about">
+      <div class="container container-lg">
+        <div class="about-title">
+          <h2 class="title">OnCourt Athletic Training Tracker</h2>
+        </div>
+
+        <div class="about-row">
+          <div class="about-content" data-aos="fade-up" data-aos-duration="1000">
+            <img
+              src="img/works/OnCourt.png"
+              alt="OnCourt Project"
+              style="width: 100%; max-width: 700px; border-radius: 20px; margin-bottom: 2rem;"
+            />
+            <p>
+              The OnCourt project is a wearable wrist-tracker designed to analyze forehand swings in tennis.
+              It uses an MPU6050 sensor and ESP32 microcontroller with an OLED screen to record and display movement data.
+              The design emphasizes compactness, real-time feedback, and distinguishable swing pattern detection between beginner and experienced players.
+            </p>
+            <br />
+            <p>
+              I prototyped and tested the device using PLA-printed enclosures and adjustable wristbands. Through recorded data, the system highlights inconsistent wrist motion in amateur swings compared to smoother curves in experienced athletes — enabling real-time coaching and self-correction.
+            </p>
+            <br />
+            <p><strong>Skills:</strong> Embedded Systems · Mechanical Design · Prototyping · Motion Analysis</p>
+            <br />
+            <a href="index.html#projects" class="btn btn-white">← Back to Projects</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      AOS.init();
+      const logo = document.getElementById("dynamic-logo");
+      const today = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      logo.textContent = "← Back to Home · " + today.toLocaleDateString(undefined, options);
+    </script>
+  </body>
+</html>
