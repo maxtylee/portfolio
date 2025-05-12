@@ -563,6 +563,28 @@ h5 {
   opacity: 1;
   visibility: visible;
 }
+.custom-footer {
+  background-color: var(--primary-accent);
+  color: var(--gray-color-3);
+  padding: 40px 0;
+}
+
+.custom-footer .footer-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-footer .footer-social a {
+  display: inline-block;
+  filter: invert(35%) sepia(11%) saturate(160%) hue-rotate(145deg) brightness(88%) contrast(80%);
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-footer .footer-social a:hover {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+
 
 /* "go to top" button */
 .goToTop {
