@@ -2,24 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OnCourt – Max Lee</title>
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
 
-  <!-- Your original styles -->
+  <!-- Original site CSS -->
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/media.css" />
 
   <!-- Bulma for clean layout only -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-
-  <!-- Optional: Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    body { font-family: 'Google Sans', sans-serif; font-size: 1.05rem; }
+    .title-section { margin-top: 80px; margin-bottom: 40px; }
+    .section-title { font-size: 2rem; font-weight: 600; margin-bottom: 1rem; }
+    .custom-footer { background-color: #111; padding: 2rem 1rem; text-align: center; }
+    .custom-footer img { filter: grayscale(100%) brightness(200%); }
+    #goToTop { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
+    #goToTop img { width: 40px; height: 40px; }
+    .content ul li { margin-bottom: 0.5em; }
+    .project-image { display: block; margin: 0 auto; max-width: 100%; height: auto; }
+  </style>
 </head>
 
 <body>
-
-  <!-- Reusing Your Header -->
+  <!-- Header -->
   <header id="header" class="header">
     <div class="container container-lg">
       <div class="header-nav">
@@ -39,51 +48,58 @@
     </div>
   </header>
 
-  <!-- Project Section -->
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered is-vcentered">
-        <div class="column is-10 has-text-centered">
-          <h1 class="title is-2">OnCourt: Athletic Training Tracker</h1>
-          <figure class="image is-3by1">
-            <img src="img/works/OnCourt.png" alt="OnCourt device render">
-          </figure>
-          <div class="content has-text-left mt-6">
-            <p>
-              OnCourt is a wearable training system for tennis athletes that tracks wrist motion in real-time to improve hitting consistency.
-              I designed a lightweight case for the ESP32 module with integrated IMU and OLED display, optimized for comfort and ease of wear.
-            </p>
-            <ul>
-              <li>🎯 CAD design using Fusion 360 for compact, wrist-mounted enclosure</li>
-              <li>🧪 Prototyped using 3D printing with FDM for rapid iteration</li>
-              <li>📈 Integrated IMU for motion capture, with OLED feedback</li>
-              <li>📶 Wireless communication via WiFi and Bluetooth</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+  <!-- Title Section -->
+  <section class="section title-section has-text-centered">
+    <div class="container">
+      <h1 class="title is-2">OnCourt: Athletic Training Tracker</h1>
+      <img src="img/works/OnCourt.png" alt="OnCourt Render" class="project-image">
     </div>
   </section>
 
-  <!-- Your Footer -->
-  <footer class="footer">
+  <!-- Project Details -->
+  <section class="section">
+    <div class="container content">
+      <p><strong>🔷 Context / Problem:</strong><br>
+      Tennis players struggle to quantify wrist motion during training. OnCourt addresses the need for a lightweight, wearable tracker to improve swing consistency in real-time.</p>
+
+      <p><strong>My Role:</strong><br>
+      I led the mechanical design, prototyping, and electronics integration for the wearable device.</p>
+
+      <p><strong>Solution Summary:</strong><br>
+      Designed a wrist-mounted enclosure for ESP32 with IMU and OLED display, providing visual feedback and wireless data capture via WiFi/Bluetooth.</p>
+
+      <p><strong>Technical Highlights:</strong></p>
+      <ul>
+        <li>🌿 CAD modelled ergonomic case in Fusion 360 for compact form</li>
+        <li>✏️ Used FDM 3D printing for physical iterations and testing</li>
+        <li>🔢 Integrated MPU6050 IMU and SSD1306 OLED on ESP32 board</li>
+        <li>🚀 Implemented onboard motion tracking and basic visualization</li>
+      </ul>
+
+      <p><strong>Results / Key Outcomes:</strong></p>
+      <ul>
+        <li>✔️ Final form factor weighs <10g and fits within 1.5" x 1.5"</li>
+        <li>📊 Functional prototype demoed to 100+ attendees at Expo Day</li>
+        <li>📊 Firmware tested for 30+ swings with reliable feedback loop</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer custom-footer">
     <div class="container">
-      <div class="footer-row">
-        <div class="social-links-row footer-social">
-          <a href="http://linkedin.com/in/maxtlee" target="_blank" title="LinkedIn">
-            <img src="img/social_icons/linkedin.svg" alt="LinkedIn profile" />
-          </a>
-        </div>
-      </div>
+      <a href="http://linkedin.com/in/maxtlee" target="_blank" title="LinkedIn">
+        <img src="img/social_icons/linkedin.svg" alt="LinkedIn profile" width="30" />
+      </a>
     </div>
   </footer>
 
   <!-- Go To Top Button -->
-  <div id="goToTop" class="goToTop">
+  <div id="goToTop">
     <a href="#top"><img src="img/icons/arrow_up.svg" alt="Back to top" /></a>
   </div>
 
-  <!-- Date for Logo -->
+  <!-- JS -->
   <script>
     const logo = document.getElementById("dynamic-logo");
     const today = new Date();
