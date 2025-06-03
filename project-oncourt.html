@@ -15,10 +15,34 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
   <style>
-    body { font-family: 'Google Sans', sans-serif; font-size: 1.05rem; }
-    .title-section { margin-top: 80px; margin-bottom: 40px; }
-    .section-title { font-size: 2rem; font-weight: 600; margin-bottom: 1rem; }
-    .custom-footer { background-color: #111; padding: 2rem 1rem; text-align: center; }
+    body {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.25rem;
+      line-height: 1.75;
+      color: #1a1a1a;
+    }
+    .title-section {
+      margin-top: 100px;
+      margin-bottom: 40px;
+    }
+    .title-section .title {
+      font-size: 2.5rem;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .custom-footer {
+      background-color: #111;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
     .footer-social a {
       display: inline-block;
       transition: transform 0.3s ease, filter 0.3s ease;
@@ -41,11 +65,21 @@
       transform: scale(1.2);
     }
     #goToTop img {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
     }
-    .content ul li { margin-bottom: 0.5em; }
-    .project-image { display: block; margin: 0 auto; max-width: 100%; height: auto; }
+    .content {
+      font-size: 1.15rem;
+    }
+    .content ul li {
+      margin-bottom: 0.5em;
+    }
+    .project-image {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 
@@ -73,7 +107,7 @@
   <!-- Title Section -->
   <section class="section title-section has-text-centered">
     <div class="container">
-      <h1 class="title is-2">OnCourt: Athletic Training Tracker</h1>
+      <h1 class="title">OnCourt: Athletic Training Tracker</h1>
       <img src="img/works/OnCourt.png" alt="OnCourt Render" class="project-image">
     </div>
   </section>
@@ -111,13 +145,13 @@
   <footer class="footer custom-footer">
     <div class="container footer-social">
       <a href="http://linkedin.com/in/maxtlee" target="_blank" title="LinkedIn">
-        <img src="img/social_icons/linkedin.svg" alt="LinkedIn profile" width="30" />
+        <img src="img/social_icons/linkedin.svg" alt="LinkedIn profile" width="36" />
       </a>
     </div>
   </footer>
 
   <!-- Go To Top Button -->
-  <div id="goToTop">
+  <div id="goToTop" class="goToTop">
     <a href="#top"><img src="img/icons/arrow_up.svg" alt="Back to top" /></a>
   </div>
 
