@@ -1,90 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OnCourt – Max Lee</title>
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/media.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OnCourt – Max Lee</title>
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
 
-  <body>
-    <!-- Header -->
-    <header id="header" class="header">
-      <div class="container container-lg">
-        <div class="header-nav">
-          <a href="index.html#home" class="logo" id="dynamic-logo">Loading date...</a>
-          <nav id="nav" class="nav">
-            <ul class="nav-list">
-              <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
-              <li class="nav-item"><a href="index.html#about" class="nav-link">About</a></li>
-              <li class="nav-item"><a href="index.html#projects" class="nav-link">Works</a></li>
-              <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <button id="nav-btn" class="nav-btn">
-              <img id="nav-btn-img" src="img/icons/open.svg" alt="Navigation button" />
-            </button>
-          </nav>
-        </div>
-      </div>
-    </header>
+  <!-- Your original styles -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/media.css" />
 
-    <!-- Project Content Section -->
-    <section class="project-detail">
-      <div class="container container-lg">
-        <h1 class="title" data-aos="fade-up">OnCourt: Athletic Training Tracker</h1>
-        <div data-aos="fade-up" data-aos-delay="100">
-          <img src="img/works/OnCourt.png" alt="OnCourt project" style="max-width:100%; border-radius: 20px;" />
-        </div>
-        <div class="project-description" data-aos="fade-up" data-aos-delay="200">
-          <p>
-            OnCourt is a wearable training system for tennis athletes that tracks wrist motion in real-time to improve hitting consistency.
-            I designed a lightweight case for the ESP32 module with integrated IMU and OLED display, optimized for comfort and ease of wear.
-          </p>
-          <ul>
-            <li>📐 CAD design using Fusion 360 for compact, wrist-mounted enclosure</li>
-            <li>⚙️ Prototyped using 3D printing with FDM for rapid iteration</li>
-            <li>📊 Integrated IMU for motion capture, with OLED feedback</li>
-            <li>📡 Wireless communication via WiFi and Bluetooth</li>
+  <!-- Bulma for clean layout only -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+
+  <!-- Optional: Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+
+<body>
+
+  <!-- Reusing Your Header -->
+  <header id="header" class="header">
+    <div class="container container-lg">
+      <div class="header-nav">
+        <a href="index.html#home" class="logo" id="dynamic-logo">Loading date...</a>
+        <nav id="nav" class="nav">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="index.html#about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="index.html#projects" class="nav-link">Works</a></li>
+            <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
           </ul>
-        </div>
+          <button id="nav-btn" class="nav-btn">
+            <img id="nav-btn-img" src="img/icons/open.svg" alt="Navigation button" />
+          </button>
+        </nav>
       </div>
-    </section>
+    </div>
+  </header>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-row">
-          <div class="social-links-row footer-social">
-            <a href="http://linkedin.com/in/maxtlee" target="_blank" title="LinkedIn">
-              <img src="img/social_icons/linkedin.svg" alt="Link to linkedin profile" />
-            </a>
+  <!-- Project Section -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered is-vcentered">
+        <div class="column is-10 has-text-centered">
+          <h1 class="title is-2">OnCourt: Athletic Training Tracker</h1>
+          <figure class="image is-3by1">
+            <img src="img/works/OnCourt.png" alt="OnCourt device render">
+          </figure>
+          <div class="content has-text-left mt-6">
+            <p>
+              OnCourt is a wearable training system for tennis athletes that tracks wrist motion in real-time to improve hitting consistency.
+              I designed a lightweight case for the ESP32 module with integrated IMU and OLED display, optimized for comfort and ease of wear.
+            </p>
+            <ul>
+              <li>🎯 CAD design using Fusion 360 for compact, wrist-mounted enclosure</li>
+              <li>🧪 Prototyped using 3D printing with FDM for rapid iteration</li>
+              <li>📈 Integrated IMU for motion capture, with OLED feedback</li>
+              <li>📶 Wireless communication via WiFi and Bluetooth</li>
+            </ul>
           </div>
         </div>
       </div>
-    </footer>
-
-    <!-- Go to Top -->
-    <div id="goToTop" class="goToTop">
-      <a href="#top"><img src="img/icons/arrow_up.svg" alt="Back to top" /></a>
     </div>
+  </section>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" crossorigin="anonymous"></script>
-    <script type="module" src="js/main.js"></script>
-    <script>
-      const logo = document.getElementById("dynamic-logo");
-      const today = new Date();
-      const options = { year: 'numeric', month: 'long', day: 'numeric' };
-      logo.textContent = today.toLocaleDateString(undefined, options);
-    </script>
-  </body>
+  <!-- Your Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-row">
+        <div class="social-links-row footer-social">
+          <a href="http://linkedin.com/in/maxtlee" target="_blank" title="LinkedIn">
+            <img src="img/social_icons/linkedin.svg" alt="LinkedIn profile" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Go To Top Button -->
+  <div id="goToTop" class="goToTop">
+    <a href="#top"><img src="img/icons/arrow_up.svg" alt="Back to top" /></a>
+  </div>
+
+  <!-- Date for Logo -->
+  <script>
+    const logo = document.getElementById("dynamic-logo");
+    const today = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    logo.textContent = today.toLocaleDateString(undefined, options);
+  </script>
+</body>
 </html>
