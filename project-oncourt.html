@@ -9,78 +9,6 @@
   <!-- Original site CSS -->
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/media.css" />
-
-  <!-- Bulma for clean layout only -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-
-  <style>
-    body {
-      font-family: 'Google Sans', sans-serif;
-      font-size: 1.25rem;
-      line-height: 1.75;
-      color: #1a1a1a;
-    }
-    .title-section {
-      margin-top: 100px;
-      margin-bottom: 40px;
-    }
-    .title-section .title {
-      font-size: 2.5rem;
-    }
-    .section-title {
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    .custom-footer {
-      background-color: #111;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    .footer-social {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    .footer-social a {
-      display: inline-block;
-      transition: transform 0.3s ease, filter 0.3s ease;
-    }
-    .footer-social a:hover {
-      transform: scale(1.2);
-      filter: brightness(1.5);
-    }
-    #goToTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 1000;
-    }
-    #goToTop a {
-      display: inline-block;
-      transition: transform 0.3s ease;
-    }
-    #goToTop a:hover {
-      transform: scale(1.2);
-    }
-    #goToTop img {
-      width: 42px;
-      height: 42px;
-    }
-    .content {
-      font-size: 1.15rem;
-    }
-    .content ul li {
-      margin-bottom: 0.5em;
-    }
-    .project-image {
-      display: block;
-      margin: 0 auto;
-      max-width: 100%;
-      height: auto;
-    }
-  </style>
 </head>
 
 <body>
@@ -143,16 +71,20 @@
 
   <!-- Footer -->
   <footer class="footer custom-footer">
-    <div class="container footer-social">
-      <a href="http://linkedin.com/in/maxtlee" target="_blank" title="LinkedIn">
-        <img src="img/social_icons/linkedin.svg" alt="LinkedIn profile" width="36" />
-      </a>
+    <div class="container footer-row">
+      <div class="social-links-row footer-social">
+        <a href="http://linkedin.com/in/maxtlee" target="_blank" title="LinkedIn">
+          <img src="img/social_icons/linkedin.svg" alt="LinkedIn profile" />
+        </a>
+      </div>
     </div>
   </footer>
 
   <!-- Go To Top Button -->
   <div id="goToTop" class="goToTop">
-    <a href="#top"><img src="img/icons/arrow_up.svg" alt="Back to top" /></a>
+    <a href="#top">
+      <img src="img/icons/arrow_up.svg" alt="Back to top" />
+    </a>
   </div>
 
   <!-- JS -->
@@ -161,6 +93,16 @@
     const today = new Date();
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     logo.textContent = today.toLocaleDateString(undefined, options);
+
+    // Scroll event for Go To Top button visibility
+    const goToTop = document.getElementById("goToTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        goToTop.classList.add("reveal");
+      } else {
+        goToTop.classList.remove("reveal");
+      }
+    });
   </script>
 </body>
 </html>
