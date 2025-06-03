@@ -1,0 +1,60 @@
+/* project.css */
+
+.project-title-section {
+  padding-top: 6rem; /* Push the title down from the header */
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.project-image {
+  margin-top: 1rem;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-content p,
+.project-content ul {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.project-content ul {
+  padding-left: 1.5rem;
+}
+
+.project-content li {
+  list-style-type: none;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.project-content li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #0c1618;
+  font-weight: bold;
+}
+
+.custom-footer {
+  padding: 2rem 0;
+  background-color: var(--gray-color-3);
+  text-align: center;
+}
+
+.goToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.goToTop.reveal {
+  opacity: 1;
+}

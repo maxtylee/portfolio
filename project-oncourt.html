@@ -6,9 +6,11 @@
   <title>OnCourt – Max Lee</title>
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
 
-  <!-- Original site CSS -->
+  <!-- Site-wide styles -->
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/media.css" />
+  <!-- Project-specific styles -->
+  <link rel="stylesheet" href="css/project.css" />
 </head>
 
 <body>
@@ -33,15 +35,15 @@
   </header>
 
   <!-- Title Section -->
-  <section class="section title-section has-text-centered">
+  <section class="section title-section project-title-section">
     <div class="container">
       <h1 class="title">OnCourt: Athletic Training Tracker</h1>
-      <img src="img/works/OnCourt.png" alt="OnCourt Render" class="project-image">
+      <img src="img/works/OnCourt.png" alt="OnCourt Render" class="project-image" />
     </div>
   </section>
 
   <!-- Project Details -->
-  <section class="section">
+  <section class="section project-content">
     <div class="container content">
       <p><strong>🔷 Context / Problem:</strong><br>
       Tennis players struggle to quantify wrist motion during training. OnCourt addresses the need for a lightweight, wearable tracker to improve swing consistency in real-time.</p>
@@ -94,7 +96,6 @@
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     logo.textContent = today.toLocaleDateString(undefined, options);
 
-    // Scroll event for Go To Top button visibility
     const goToTop = document.getElementById("goToTop");
     window.addEventListener("scroll", () => {
       if (window.scrollY > 200) {
