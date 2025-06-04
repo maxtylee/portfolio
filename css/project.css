@@ -1,20 +1,64 @@
-/* project.css */
-
+/* ===== Title Section ===== */
 .project-title-section {
-  padding-top: 6rem; /* Push the title down from the header */
+  padding-top: 6rem;
   margin-bottom: 3rem;
   text-align: center;
 }
 
-.project-image {
-  margin-top: 1rem;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.subtitle {
+  font-size: 1rem;
+  color: var(--gray-text-color);
+  text-align: center;
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
 }
 
+/* ===== Carousel ===== */
+.carousel {
+  max-width: 100%;
+  text-align: center;
+  margin: 1rem auto 2rem;
+  position: relative;
+}
+
+.carousel img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: none;
+  margin: 0 auto;
+}
+
+.carousel img.active {
+  display: block;
+}
+
+.carousel .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #888;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.carousel .arrow:hover {
+  color: var(--primary-accent);
+}
+
+.carousel .arrow.left {
+  left: 0.5rem;
+}
+
+.carousel .arrow.right {
+  right: 0.5rem;
+}
+
+/* ===== Project Content ===== */
 .project-content p,
 .project-content ul {
   font-size: 1.25rem;
@@ -40,16 +84,30 @@
   font-weight: bold;
 }
 
-/* .custom-footer {
-  background-color: var(--primary-accent);
-  color: var(--gray-color-3);
-  padding: 40px 0;
+.project-content strong {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+/* ===== Section Backgrounds ===== */
+.alt-section {
+  background-color: var(--primary-bg-color);
+  padding: 7rem 0;
+}
+
+.white-bg {
+  background-color: white;
+}
+
+/* ===== PDF Section ===== */
+.pdf-placeholder {
   text-align: center;
-} */
+  padding: 4rem 0;
+}
 
-
-
-
+/* ===== Go To Top Button ===== */
 .goToTop {
   position: fixed;
   bottom: 20px;
@@ -62,69 +120,3 @@
 .goToTop.reveal {
   opacity: 1;
 }
-
-/* Match section breaks from main site */
-.alt-section {
-  background-color: var(--primary-bg-color);
-  padding: 7rem 0;
-}
-.project-content strong {
-  display: inline-block;
-  font-size: 1.5rem;  /* slightly larger than 1.5rem body text */
-  font-weight: 600;   /* semi-bold for clarity */
-  margin-bottom: 0.4rem;
-}
-
-.subtitle {
-  font-size: 1rem;
-  color: var(--gray-text-color);
-  text-align: center;
-  margin-top: -1rem;
-  margin-bottom: 1.5rem;
-}
-
-.carousel {
-  max-width: 100%;
-  text-align: center;
-  margin: 1rem auto 2rem;
-  position: relative;
-}
-
-.carousel img {
-  max-width: 500px;
-  height: auto;
-  display: none;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.carousel img.active {
-  display: block;
-}
-
-.carousel .arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  background: rgba(0, 0, 0, 0.4);
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
-
-.carousel .arrow.left {
-  left: 10px;
-}
-
-.carousel .arrow.right {
-  right: 10px;
-}
-
-.pdf-placeholder {
-  text-align: center;
-  padding: 4rem 0;
-  background-color: var(--primary-bg-color);
-}
-

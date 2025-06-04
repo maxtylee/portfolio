@@ -35,11 +35,17 @@
       <h1 class="title">OnCourt: Athletic Training Tracker</h1>
       <div class="subtitle">2025</div>
       <div class="carousel">
-        <button class="arrow left" onclick="prevImage()">&#8249;</button>
+        <button class="arrow left" onclick="prevImage()">
+          <span class="visually-hidden">Previous</span>
+          &#10094;
+        </button>
         <img src="img/works/OnCourt.png" class="active" alt="Slide 1" />
         <img src="img/works/OnCourt2.png" alt="Slide 2" />
         <img src="img/works/OnCourt3.png" alt="Slide 3" />
-        <button class="arrow right" onclick="nextImage()">&#8250;</button>
+        <button class="arrow right" onclick="nextImage()">
+          <span class="visually-hidden">Next</span>
+          &#10095;
+        </button>
       </div>
     </div>
   </section>
@@ -62,10 +68,12 @@
     </div>
   </section>
 
-  <div class="pdf-placeholder">
-    <p><strong>PDF Attachment Placeholder</strong></p>
-    <p>Insert downloadable project PDF or whitepaper here.</p>
-  </div>
+  <section class="pdf-placeholder white-bg">
+    <div class="container">
+      <p><strong>PDF Attachment Placeholder</strong></p>
+      <p>Insert downloadable project PDF or whitepaper here.</p>
+    </div>
+  </section>
 
   <footer class="footer custom-footer">
     <div class="container">
@@ -95,7 +103,6 @@
       goToTop.classList.toggle("reveal", window.scrollY > 200);
     });
 
-    // Simple carousel logic
     const images = document.querySelectorAll('.carousel img');
     let current = 0;
 
@@ -114,7 +121,7 @@
       showImage(current);
     }
 
-    setInterval(nextImage, 4000); // auto-rotate every 4s
+    setInterval(nextImage, 4000);
   </script>
 </body>
 </html>
