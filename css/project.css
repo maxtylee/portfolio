@@ -107,30 +107,6 @@
   background-color: var(--primary-accent);
 }
 
-/* ===== Skills Section ===== */
-.project-skills {
-  background-color: var(--gray-color);
-  padding: 3rem 0;
-  text-align: center;
-}
-
-.project-skill-list {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  font-size: 1rem;
-  color: var(--main-text-color);
-  margin-top: 1rem;
-}
-
-.project-skill-list li {
-  background: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-weight: 500;
-}
-
 /* ===== Project Content ===== */
 .project-content p,
 .project-content ul {
@@ -201,4 +177,25 @@
 
 .goToTop.reveal {
   opacity: 1;
+}
+/* Project Skills Section */
+.project-skills {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.project-skill-list {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  color: var(--main-text-color);
+}
+
+.project-skill-list li {
+  background: var(--gray-color-3);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
 }
