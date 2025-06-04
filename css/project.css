@@ -158,6 +158,7 @@
 /* ===== PDF Section  ===== */
 .pdf-placeholder {
   text-align: center;
+  font-size: 1.5rem;
   padding: 4rem 0;
   background-color: white;
 }
