@@ -62,3 +62,9 @@
 .goToTop.reveal {
   opacity: 1;
 }
+
+/* Match section breaks from main site */
+.alt-section {
+  background-color: var(--primary-bg-color);
+  padding: 7rem 0;
+}
