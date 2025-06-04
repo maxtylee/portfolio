@@ -27,6 +27,7 @@
   height: auto;
   display: none;
   margin: 0 auto;
+  border-radius: 8px;
 }
 
 .carousel img.active {
@@ -37,25 +38,33 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 2rem;
-  background: none;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  color: var(--main-text-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
   border: none;
-  color: #888;
-  padding: 0.2rem 0.6rem;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
 }
 
 .carousel .arrow:hover {
-  color: var(--primary-accent);
+  transform: translateY(-50%) scale(1.1);
+  background-color: var(--gray-color-3);
 }
 
 .carousel .arrow.left {
-  left: 0.5rem;
+  left: -20px;
 }
 
 .carousel .arrow.right {
-  right: 0.5rem;
+  right: -20px;
 }
 
 /* ===== Project Content ===== */
@@ -101,10 +110,11 @@
   background-color: white;
 }
 
-/* ===== PDF Section ===== */
+/* ===== PDF Section  ===== */
 .pdf-placeholder {
   text-align: center;
   padding: 4rem 0;
+  background-color: white;
 }
 
 /* ===== Go To Top Button ===== */

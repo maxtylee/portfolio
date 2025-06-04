@@ -35,17 +35,11 @@
       <h1 class="title">OnCourt: Athletic Training Tracker</h1>
       <div class="subtitle">2025</div>
       <div class="carousel">
-        <button class="arrow left" onclick="prevImage()">
-          <span class="visually-hidden">Previous</span>
-          &#10094;
-        </button>
+        <button class="arrow left" onclick="prevImage()" aria-label="Previous slide">&#10094;</button>
         <img src="img/works/OnCourt.png" class="active" alt="Slide 1" />
         <img src="img/works/OnCourt2.png" alt="Slide 2" />
         <img src="img/works/OnCourt3.png" alt="Slide 3" />
-        <button class="arrow right" onclick="nextImage()">
-          <span class="visually-hidden">Next</span>
-          &#10095;
-        </button>
+        <button class="arrow right" onclick="nextImage()" aria-label="Next slide">&#10095;</button>
       </div>
     </div>
   </section>
@@ -99,8 +93,10 @@
     logo.textContent = today.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
 
     const goToTop = document.getElementById("goToTop");
+    const header = document.getElementById("header");
     window.addEventListener("scroll", () => {
       goToTop.classList.toggle("reveal", window.scrollY > 200);
+      header.classList.toggle("header-sticky", window.scrollY > 50);
     });
 
     const images = document.querySelectorAll('.carousel img');
