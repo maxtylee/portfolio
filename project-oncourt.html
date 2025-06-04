@@ -8,12 +8,37 @@
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/media.css" />
   <link rel="stylesheet" href="css/project.css" />
+  <style>
+    .header-nav {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+    }
+
+    .header-nav .logo {
+      justify-self: start;
+    }
+
+    .header-nav img.favicon-center {
+      height: 40px;
+      justify-self: center;
+    }
+
+    .nav {
+      justify-self: end;
+    }
+  </style>
 </head>
 <body>
   <header id="header" class="header">
     <div class="container container-lg">
       <div class="header-nav">
         <a href="index.html#home" class="logo" id="dynamic-logo">Loading date...</a>
+
+        <a href="index.html">
+          <img src="img/favicon.png" alt="Favicon" class="favicon-center" />
+        </a>
+
         <nav id="nav" class="nav">
           <ul class="nav-list">
             <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
@@ -30,31 +55,29 @@
   </header>
 
   <section class="section title-section project-title-section">
-  <div class="container">
-    <h1 class="title">OnCourt: Athletic Training Tracker</h1>
-    <div class="subtitle" style="margin-top: -4rem; margin-bottom: 2rem;">2025</div>
+    <div class="container">
+      <h1 class="title">OnCourt: Athletic Training Tracker</h1>
+      <div class="subtitle" style="margin-top: -2.5rem; margin-bottom: 0.5rem;">2025</div>
 
+      <ul class="project-skill-list" style="margin-top: 1rem; margin-bottom: 2rem;">
+        <li>CAD (Fusion 360)</li>
+        <li>3D Printing (FDM)</li>
+        <li>ESP32 Microcontroller</li>
+        <li>IMU Integration (MPU6050)</li>
+        <li>Embedded Systems</li>
+      </ul>
 
-    <ul class="project-skill-list" style="margin-top: 1rem; margin-bottom: 2rem;">
-      <li>CAD (Fusion 360)</li>
-      <li>3D Printing (FDM)</li>
-      <li>ESP32 Microcontroller</li>
-      <li>IMU Integration (MPU6050)</li>
-      <li>Embedded Systems</li>
-    </ul>
-
-    <div class="carousel" onmouseenter="pauseCarousel()" onmouseleave="resumeCarousel()">
-      <button class="arrow left" onclick="prevImage()" aria-label="Previous slide">&#10094;</button>
-      <img src="img/works/OnCourt.png" class="active" alt="Slide 1" onclick="openFullscreen(this)" />
-      <img src="img/works/OnCourt2.png" alt="Slide 2" onclick="openFullscreen(this)" />
-      <img src="img/works/OnCourt3.png" alt="Slide 3" onclick="openFullscreen(this)" />
-      <img src="img/works/OnCourt4.png" alt="Slide 4" onclick="openFullscreen(this)" />
-      <div class="carousel-dots"></div>
-      <button class="arrow right" onclick="nextImage()" aria-label="Next slide">&#10095;</button>
+      <div class="carousel" onmouseenter="pauseCarousel()" onmouseleave="resumeCarousel()">
+        <button class="arrow left" onclick="prevImage()" aria-label="Previous slide">&#10094;</button>
+        <img src="img/works/OnCourt.png" class="active" alt="Slide 1" onclick="openFullscreen(this)" />
+        <img src="img/works/OnCourt2.png" alt="Slide 2" onclick="openFullscreen(this)" />
+        <img src="img/works/OnCourt3.png" alt="Slide 3" onclick="openFullscreen(this)" />
+        <img src="img/works/OnCourt4.png" alt="Slide 4" onclick="openFullscreen(this)" />
+        <div class="carousel-dots"></div>
+        <button class="arrow right" onclick="nextImage()" aria-label="Next slide">&#10095;</button>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <section class="section project-content alt-section">
     <div class="container content">
