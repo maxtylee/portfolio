@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="css/media.css" />
   <link rel="stylesheet" href="css/project.css" />
 </head>
-
 <body>
   <header id="header" class="header">
     <div class="container container-lg">
@@ -36,10 +35,10 @@
       <div class="subtitle">2025</div>
       <div class="carousel" onmouseenter="pauseCarousel()" onmouseleave="resumeCarousel()">
         <button class="arrow left" onclick="prevImage()" aria-label="Previous slide">&#10094;</button>
-        <img src="img/works/OnCourt.png" class="active" alt="Slide 1" />
-        <img src="img/works/OnCourt2.png" alt="Slide 2" />
-        <img src="img/works/OnCourt3.png" alt="Slide 3" />
-        <img src="img/works/OnCourt4.png" alt="Slide 4" />
+        <img src="img/works/OnCourt.png" class="active" alt="Slide 1" onclick="openFullscreen(this)" />
+        <img src="img/works/OnCourt2.png" alt="Slide 2" onclick="openFullscreen(this)" />
+        <img src="img/works/OnCourt3.png" alt="Slide 3" onclick="openFullscreen(this)" />
+        <img src="img/works/OnCourt4.png" alt="Slide 4" onclick="openFullscreen(this)" />
         <div class="carousel-dots"></div>
         <button class="arrow right" onclick="nextImage()" aria-label="Next slide">&#10095;</button>
       </div>
@@ -48,8 +47,7 @@
 
   <section class="section project-content alt-section">
     <div class="container content">
-      <p><strong>🔷 Context / Problem:</strong><br>
-      Tennis players struggle to quantify wrist motion during training...</p>
+      <p><strong>🔷 Context / Problem:</strong><br>Tennis players struggle to quantify wrist motion during training...</p>
       <p><strong>My Role:</strong><br>I led the mechanical design...</p>
       <p><strong>Solution Summary:</strong><br>Designed a wrist-mounted enclosure...</p>
       <p><strong>Technical Highlights:</strong></p>
@@ -67,18 +65,10 @@
   <section class="pdf-placeholder white-bg">
     <div class="container">
       <p><strong>Project Report Preview</strong></p>
-      <iframe 
-        src="files/oncourt_project.pdf#toolbar=0&navpanes=0&scrollbar=0" 
-        width="100%" 
-        height="600px" 
-        style="border: none;">
-      </iframe>
-      <!-- <p><a href="files/oncourt_project.pdf" target="_blank" class="btn btn-white">Download PDF</a></p> -->
+      <iframe src="files/oncourt_project.pdf#toolbar=0&navpanes=0&scrollbar=0" width="100%" height="600px" style="border: none;"></iframe>
       <div class="pdf-buttons">
-        <!-- <a href="files/oncourt_project.pdf" target="_blank" class="btn btn-white">Download PDF</a> -->
         <a href="files/oncourt_project.pdf" target="_blank" class="btn btn-white">Fullscreen</a>
       </div>
-
     </div>
   </section>
 
@@ -163,6 +153,12 @@
 
     function resumeCarousel() {
       startCarousel();
+    }
+
+    function openFullscreen(img) {
+      const src = img.src;
+      const win = window.open("", "_blank");
+      win.document.write(`<html><head><title>Fullscreen</title><style>body{margin:0;background:#000;display:flex;justify-content:center;align-items:center;height:100vh}img{max-width:100vw;max-height:100vh}</style></head><body><img src="${src}" alt="fullscreen" /></body></html>`);
     }
 
     createDots();
