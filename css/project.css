@@ -2,7 +2,7 @@
 
 .project-title-section {
   padding-top: 6rem; /* Push the title down from the header */
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   text-align: center;
 }
 
@@ -17,7 +17,7 @@
 
 .project-content p,
 .project-content ul {
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1.6;
   margin-bottom: 1.2rem;
 }
@@ -68,3 +68,10 @@
   background-color: var(--primary-bg-color);
   padding: 7rem 0;
 }
+.project-content strong {
+  display: inline-block;
+  font-size: 1.7rem;  /* slightly larger than 1.5rem body text */
+  font-weight: 600;   /* semi-bold for clarity */
+  margin-bottom: 0.4rem;
+}
+
