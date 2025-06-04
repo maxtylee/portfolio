@@ -39,6 +39,11 @@
         <img src="img/works/OnCourt.png" class="active" alt="Slide 1" />
         <img src="img/works/OnCourt2.png" alt="Slide 2" />
         <img src="img/works/OnCourt3.png" alt="Slide 3" />
+        <div class="carousel-dots">
+          <span class="dot" onclick="goToImage(0)"></span>
+          <span class="dot" onclick="goToImage(1)"></span>
+          <span class="dot" onclick="goToImage(2)"></span>
+        </div>
         <button class="arrow right" onclick="nextImage()" aria-label="Next slide">&#10095;</button>
       </div>
     </div>
@@ -69,11 +74,9 @@
         src="files/oncourt_project.pdf#toolbar=0&navpanes=0&scrollbar=0" 
         width="100%" 
         height="600px" 
-        <!-- style="border: 1px solid var(--gray-color-2); border-radius: 8px;"> -->
         style="border: none;">
       </iframe>
       <p><a href="files/oncourt_project.pdf" target="_blank" class="btn btn-white">Download PDF</a></p>
-
     </div>
   </section>
 
@@ -113,6 +116,7 @@
     function showImage(index) {
       images.forEach(img => img.classList.remove('active'));
       images[index].classList.add('active');
+      updateDots(index);
     }
 
     function nextImage() {
@@ -123,6 +127,17 @@
     function prevImage() {
       current = (current - 1 + images.length) % images.length;
       showImage(current);
+    }
+
+    function goToImage(index) {
+      current = index;
+      showImage(current);
+    }
+
+    function updateDots(index) {
+      const dots = document.querySelectorAll(".dot");
+      dots.forEach(dot => dot.classList.remove("active"));
+      if (dots[index]) dots[index].classList.add("active");
     }
 
     setInterval(nextImage, 4000);
