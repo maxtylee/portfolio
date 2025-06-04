@@ -150,6 +150,11 @@
   background-color: white;
 }
 
+.section-alt {
+  background-color: var(--gray-color-3); /* or another suitable variable or hex code */
+  padding: 7rem 0;
+}
+
 /* ===== PDF Section  ===== */
 .pdf-placeholder {
   text-align: center;
