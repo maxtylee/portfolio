@@ -44,6 +44,7 @@
 
 .carousel img.active {
   display: block;
+  z-index: 1;
 }
 
 .carousel .arrow {
@@ -63,7 +64,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  z-index: 2;
 }
 
 .carousel .arrow:hover {
@@ -72,11 +73,11 @@
 }
 
 .carousel .arrow.left {
-  left: -20px;
+  left: 10px;
 }
 
 .carousel .arrow.right {
-  right: -20px;
+  right: 10px;
 }
 
 .carousel-dots {
