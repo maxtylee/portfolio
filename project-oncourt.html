@@ -1,3 +1,4 @@
+<!-- Updated project-oncourt.html with year, PDF placeholder, and image carousel -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,16 +6,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OnCourt – Max Lee</title>
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-
-  <!-- Site-wide styles -->
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/media.css" />
-  <!-- Project-specific styles -->
   <link rel="stylesheet" href="css/project.css" />
+  <style>
+    .subtitle {
+      font-size: 1rem;
+      color: var(--gray-text-color);
+      text-align: center;
+      margin-top: -2rem;
+      margin-bottom: 2rem;
+    }
+
+    .pdf-placeholder {
+      text-align: center;
+      padding: 4rem 0;
+      background-color: var(--gray-color-3);
+      margin-top: 3rem;
+    }
+
+    .carousel {
+      position: relative;
+      max-width: 600px;
+      margin: 4rem auto;
+      overflow: hidden;
+    }
+
+    .carousel img {
+      width: 100%;
+      display: none;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    .carousel .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      background: rgba(0, 0, 0, 0.4);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+
+    .carousel .arrow.left {
+      left: 10px;
+    }
+
+    .carousel .arrow.right {
+      right: 10px;
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Header -->
   <header id="header" class="header">
     <div class="container container-lg">
       <div class="header-nav">
@@ -34,44 +83,45 @@
     </div>
   </header>
 
-  <!-- Title Section -->
   <section class="section title-section project-title-section">
     <div class="container">
       <h1 class="title">OnCourt: Athletic Training Tracker</h1>
+      <div class="subtitle">2025</div>
       <img src="img/works/OnCourt.png" alt="OnCourt Render" class="project-image" />
     </div>
   </section>
 
-  <!-- Project Details with alt background -->
   <section class="section project-content alt-section">
     <div class="container content">
       <p><strong>🔷 Context / Problem:</strong><br>
-      Tennis players struggle to quantify wrist motion during training. OnCourt addresses the need for a lightweight, wearable tracker to improve swing consistency in real-time.</p>
-
-      <p><strong>My Role:</strong><br>
-      I led the mechanical design, prototyping, and electronics integration for the wearable device.</p>
-
-      <p><strong>Solution Summary:</strong><br>
-      Designed a wrist-mounted enclosure for ESP32 with IMU and OLED display, providing visual feedback and wireless data capture via WiFi/Bluetooth.</p>
-
+      Tennis players struggle to quantify wrist motion during training...</p>
+      <p><strong>My Role:</strong><br>I led the mechanical design...</p>
+      <p><strong>Solution Summary:</strong><br>Designed a wrist-mounted enclosure...</p>
       <p><strong>Technical Highlights:</strong></p>
       <ul>
-        <li>🌿 CAD modelled ergonomic case in Fusion 360 for compact form</li>
-        <li>✏️ Used FDM 3D printing for physical iterations and testing</li>
-        <li>🔢 Integrated MPU6050 IMU and SSD1306 OLED on ESP32 board</li>
-        <li>🚀 Implemented onboard motion tracking and basic visualization</li>
+        <li>🌿 CAD modelled ergonomic case in Fusion 360...</li>
+        <li>✏️ Used FDM 3D printing...</li>
       </ul>
-
       <p><strong>Results / Key Outcomes:</strong></p>
       <ul>
-        <li>✔️ Final form factor weighs <10g and fits within 1.5" x 1.5"</li>
-        <li>📊 Functional prototype demoed to 100+ attendees at Expo Day</li>
-        <li>📊 Firmware tested for 30+ swings with reliable feedback loop</li>
+        <li>✔️ Final form factor weighs <10g...</li>
       </ul>
     </div>
   </section>
 
-  <!-- Footer -->
+  <div class="carousel">
+    <button class="arrow left" onclick="prevImage()">&#8249;</button>
+    <img src="img/works/OnCourt.png" class="active" alt="Slide 1" />
+    <img src="img/works/OnCourt2.png" alt="Slide 2" />
+    <img src="img/works/OnCourt3.png" alt="Slide 3" />
+    <button class="arrow right" onclick="nextImage()">&#8250;</button>
+  </div>
+
+  <div class="pdf-placeholder">
+    <p><strong>PDF Attachment Placeholder</strong></p>
+    <p>Insert downloadable project PDF or whitepaper here.</p>
+  </div>
+
   <footer class="footer custom-footer">
     <div class="container">
       <div class="footer-row">
@@ -84,28 +134,42 @@
     </div>
   </footer>
 
-  <!-- Go To Top Button -->
   <div id="goToTop" class="goToTop">
     <a href="#top">
       <img src="img/icons/arrow_up.svg" alt="Back to top" />
     </a>
   </div>
 
-  <!-- JS -->
   <script>
     const logo = document.getElementById("dynamic-logo");
     const today = new Date();
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    logo.textContent = today.toLocaleDateString(undefined, options);
+    logo.textContent = today.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
 
     const goToTop = document.getElementById("goToTop");
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 200) {
-        goToTop.classList.add("reveal");
-      } else {
-        goToTop.classList.remove("reveal");
-      }
+      goToTop.classList.toggle("reveal", window.scrollY > 200);
     });
+
+    // Simple carousel logic
+    const images = document.querySelectorAll('.carousel img');
+    let current = 0;
+
+    function showImage(index) {
+      images.forEach(img => img.classList.remove('active'));
+      images[index].classList.add('active');
+    }
+
+    function nextImage() {
+      current = (current + 1) % images.length;
+      showImage(current);
+    }
+
+    function prevImage() {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    }
+
+    setInterval(nextImage, 4000); // auto-rotate every 4s
   </script>
 </body>
 </html>
