@@ -57,7 +57,7 @@
       </ul>
       <p><strong>Results / Key Outcomes:</strong></p>
       <ul>
-        <li>✔️ Final form factor weighs <10g...</li>
+        <li>✔️ Final form factor weighs &lt;10g...</li>
       </ul>
     </div>
   </section>
@@ -158,7 +158,7 @@
     function openFullscreen(img) {
       const src = img.src;
       const win = window.open("", "_blank");
-      win.document.write(`<html><head><title>Fullscreen</title><style>body{margin:0;background:#000;display:flex;justify-content:center;align-items:center;height:100vh}img{max-width:100vw;max-height:100vh}</style></head><body><img src="${src}" alt="fullscreen" /></body></html>`);
+      win.document.write(`<html><head><title>Fullscreen</title><style>body{margin:0;background:#000;display:flex;justify-content:center;align-items:center;height:100vh}img{max-width:100vw;max-height:100vh}</style></head><body><img src=\"${src}\" alt=\"fullscreen\" /></body></html>`);
     }
 
     createDots();
