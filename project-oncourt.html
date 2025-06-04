@@ -1,4 +1,3 @@
-<!-- Updated project-oncourt.html with year, PDF placeholder, and image carousel -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,17 +17,10 @@
       margin-bottom: 2rem;
     }
 
-    .pdf-placeholder {
-      text-align: center;
-      padding: 4rem 0;
-      background-color: var(--gray-color-3);
-      margin-top: 3rem;
-    }
-
     .carousel {
       position: relative;
       max-width: 600px;
-      margin: 4rem auto;
+      margin: 2rem auto;
       overflow: hidden;
     }
 
@@ -60,6 +52,13 @@
     .carousel .arrow.right {
       right: 10px;
     }
+
+    .pdf-placeholder {
+      text-align: center;
+      padding: 4rem 0;
+      background-color: var(--gray-color-3);
+      margin-top: 3rem;
+    }
   </style>
 </head>
 
@@ -87,7 +86,13 @@
     <div class="container">
       <h1 class="title">OnCourt: Athletic Training Tracker</h1>
       <div class="subtitle">2025</div>
-      <img src="img/works/OnCourt.png" alt="OnCourt Render" class="project-image" />
+      <div class="carousel">
+        <button class="arrow left" onclick="prevImage()">&#8249;</button>
+        <img src="img/works/OnCourt.png" class="active" alt="Slide 1" />
+        <img src="img/works/OnCourt2.png" alt="Slide 2" />
+        <img src="img/works/OnCourt3.png" alt="Slide 3" />
+        <button class="arrow right" onclick="nextImage()">&#8250;</button>
+      </div>
     </div>
   </section>
 
@@ -108,14 +113,6 @@
       </ul>
     </div>
   </section>
-
-  <div class="carousel">
-    <button class="arrow left" onclick="prevImage()">&#8249;</button>
-    <img src="img/works/OnCourt.png" class="active" alt="Slide 1" />
-    <img src="img/works/OnCourt2.png" alt="Slide 2" />
-    <img src="img/works/OnCourt3.png" alt="Slide 3" />
-    <button class="arrow right" onclick="nextImage()">&#8250;</button>
-  </div>
 
   <div class="pdf-placeholder">
     <p><strong>PDF Attachment Placeholder</strong></p>
