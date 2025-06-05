@@ -14,20 +14,17 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-DYWLDHBKVK');
   </script>  
+  <!-- Load model-viewer -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
   <header id="header" class="header">
     <div class="container container-lg">
       <div class="header-nav">
         <a href="index.html#home" class="logo" id="dynamic-logo">Loading date...</a>
-
-        <a href="index.html">
-          <img src="img/favicon.png" alt="Favicon" class="favicon-center" />
-        </a>
-
+        <a href="index.html"><img src="img/favicon.png" alt="Favicon" class="favicon-center" /></a>
         <nav id="nav" class="nav">
           <ul class="nav-list">
             <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
@@ -47,7 +44,6 @@
     <div class="container">
       <h1 class="title">OnCourt: Wearable Joint Motion Tracker for Tennis Training</h1>
       <div class="subtitle subtitle-tight">2025</div>
-
       <section class="project-skill-section full-width-section">
         <ul class="project-skill-list">
           <li>CAD (SolidWorks)</li>
@@ -60,10 +56,10 @@
 
       <div class="carousel" onmouseenter="pauseCarousel()" onmouseleave="resumeCarousel()">
         <button class="arrow left" onclick="prevImage()" aria-label="Previous slide">&#10094;</button>
-        <img src="img/works/OnCourt.png" class="active" alt="Slide 1" onclick="openFullscreen(this)" />
-        <img src="img/works/OnCourt2.png" alt="Slide 2" onclick="openFullscreen(this)" />
-        <img src="img/works/OnCourt3.png" alt="Slide 3" onclick="openFullscreen(this)" />
-        <img src="img/works/OnCourt4.png" alt="Slide 4" onclick="openFullscreen(this)" />
+        <img src="img/OnCourt/OnCourt.png" class="active" alt="Slide 1" onclick="openFullscreen(this)" />
+        <img src="img/OnCourt/OnCourt2.png" alt="Slide 2" onclick="openFullscreen(this)" />
+        <img src="img/OnCourt/OnCourt3.png" alt="Slide 3" onclick="openFullscreen(this)" />
+        <img src="img/OnCourt/OnCourt4.png" alt="Slide 4" onclick="openFullscreen(this)" />
         <div class="carousel-dots"></div>
         <button class="arrow right" onclick="nextImage()" aria-label="Next slide">&#10095;</button>
       </div>
@@ -73,15 +69,13 @@
   <section class="section project-content alt-section">
     <div class="container content">
       <p><strong>🔍 Context / Problem:</strong><br>
-      Amateur tennis players often lack resources for personal 
-      training and tools to accurately quantify wrist motion, making it difficult to improve their technique and overall performance.
+      Amateur tennis players often lack resources for personal training and tools to accurately quantify wrist motion, making it difficult to improve their technique and overall performance.
       </p>
 
       <p><strong>🛠️ My Role:</strong><br>
       Reviewed existing patents to explore product opportunities and conducted user interviews to gather feedback on needs and usability. 
       Led the mechanical design and prototyping of a wearable device, emphasizing compactness, seamless sensor integration, and comfort during active use.
       </p>
-
 
       <p><strong>💡 Solution Summary:</strong><br>
       Designed a wrist-mounted enclosure that houses an ESP32 microcontroller and MPU6050 IMU to track arm motion. 
@@ -96,6 +90,17 @@
         <li>Integrated ESP32 and IMU for real-time motion tracking and data collection.</li>
       </ul>
 
+      <p><strong>🧩 Interactive 3D Model:</strong><br>
+      Explore the wearable enclosure in 3D. Click and drag to inspect all sides.</p>
+
+      <model-viewer src="img/OnCourt/assembly.glb"
+                    alt="Wearable Enclosure 3D Model"
+                    auto-rotate
+                    camera-controls
+                    shadow-intensity="1"
+                    style="width: 100%; height: 500px; background-color: #fff;">
+      </model-viewer>
+
       <p><strong>🏁 Results / Key Outcomes:</strong></p>
       <ul>
         <li>Final prototype achieved a lightweight form factor under 40g with a secure fit during dynamic movement.</li>
@@ -103,7 +108,6 @@
       </ul>
     </div>
   </section>
-
 
   <section class="pdf-placeholder white-bg">
     <div class="container">
