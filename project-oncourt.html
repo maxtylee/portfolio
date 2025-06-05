@@ -90,22 +90,29 @@
         <li>Integrated ESP32 and IMU for real-time motion tracking and data collection.</li>
       </ul>
 
-      <p><strong>🧩 Interactive 3D Model:</strong><br>
-      Explore the wearable enclosure in 3D. Click and drag to inspect all sides.</p>
-
-      <model-viewer src="img/OnCourt/assembly.glb"
-                    alt="Wearable Enclosure 3D Model"
-                    auto-rotate
-                    camera-controls
-                    shadow-intensity="1"
-                    style="width: 100%; height: 500px; background-color: #fff;">
-      </model-viewer>
-
       <p><strong>🏁 Results / Key Outcomes:</strong></p>
       <ul>
         <li>Final prototype achieved a lightweight form factor under 40g with a secure fit during dynamic movement.</li>
         <li>System successfully captured wrist rotation data suitable for performance feedback and further analysis.</li>
       </ul>
+      <!-- 3D Model Viewer Section -->
+      <section class="section project-content" style="padding-top: 0;">
+        <div class="container content">
+          <p><strong>🧩 Interactive 3D Model:</strong><br>
+          View the final wearable housing design in 3D. Click and drag to explore the geometry.</p>
+
+          <model-viewer src="img/OnCourt/assembly.glb"
+                        alt="Wearable Enclosure 3D Model"
+                        auto-rotate
+                        camera-controls
+                        shadow-intensity="0.8"
+                        exposure="0.7"
+                        disable-zoom
+                        style="width: 100%; height: 500px; background-color: transparent;">
+          </model-viewer>
+        </div>
+      </section>
+
     </div>
   </section>
 
