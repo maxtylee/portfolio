@@ -1,7 +1,7 @@
 /* ===== Title Section ===== */
 .project-title-section {
   padding-top: 6rem;
-  margin-bottom: 0rem;
+  margin-bottom: 3rem;
   text-align: center;
 }
 
@@ -9,7 +9,7 @@
   font-size: 1rem;
   color: var(--gray-text-color);
   text-align: center;
-  margin-top: -1rem;
+  margin-top: -2rem;
   margin-bottom: 1.5rem;
 }
 
