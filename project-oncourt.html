@@ -4,20 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OnCourt – Max Lee</title>
-  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="img/favicon.png" type="image/x-icon" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/media.css" />
-  <link rel="stylesheet" href="css/project-media.css" />
   <link rel="stylesheet" href="css/project.css" />
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="css/project-media.css" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYWLDHBKVK"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-DYWLDHBKVK');
-  </script>  
-  <!-- Load model-viewer -->
+  </script>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
@@ -26,7 +24,7 @@
       <div class="header-nav">
         <a href="index.html#home" class="logo" id="dynamic-logo">Loading date...</a>
         <a href="index.html"><img src="img/favicon.png" alt="Favicon" class="favicon-center" /></a>
-        <nav id="nav" class="nav">
+        <nav class="nav">
           <ul class="nav-list">
             <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="index.html#about" class="nav-link">About</a></li>
@@ -34,7 +32,7 @@
             <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
           </ul>
           <button id="nav-btn" class="nav-btn">
-            <img id="nav-btn-img" src="img/icons/open.svg" alt="Navigation button" />
+            <img src="img/icons/open.svg" alt="Menu" />
           </button>
         </nav>
       </div>
@@ -45,6 +43,7 @@
     <div class="container">
       <h1 class="title">OnCourt: Wearable Motion Tracker for Tennis Training</h1>
       <div class="subtitle subtitle-tight">2025</div>
+
       <section class="project-skill-section full-width-section">
         <ul class="project-skill-list">
           <li>CAD (SolidWorks)</li>
@@ -56,18 +55,13 @@
       </section>
 
       <div class="carousel" onmouseenter="pauseCarousel()" onmouseleave="resumeCarousel()">
-        <button class="arrow left" onclick="prevImage()" aria-label="Previous slide">&#10094;</button>
-        <!-- <img src="img/OnCourt/OnCourt.png" class="active" alt="Slide 1" onclick="openFullscreen(this)" />
-        <img src="img/OnCourt/OnCourt2.png" alt="Slide 2" onclick="openFullscreen(this)" />
-        <img src="img/OnCourt/OnCourt3.PNG" alt="Slide 3" onclick="openFullscreen(this)" />
-        <img src="img/OnCourt/OnCourt4.png" alt="Slide 4" onclick="openFullscreen(this)" /> -->
+        <button class="arrow left" onclick="prevImage()" aria-label="Previous">&#10094;</button>
         <img src="img/OnCourt/OnCourt.png" class="active" alt="Top view of enclosure" data-caption="Final Watch Assembly CAD" onclick="openFullscreen(this)" />
-        <img src="img/OnCourt/OnCourt2.png" alt="Side view" data-caption="ESP32 microcontroller and MPU6050 sensor module connected via electronic wiring on a perfboard" onclick="openFullscreen(this)" />
+        <img src="img/OnCourt/OnCourt2.png" alt="Side view" data-caption="ESP32 and MPU6050 on perfboard" onclick="openFullscreen(this)" />
         <img src="img/OnCourt/OnCourt3.PNG" alt="Exploded view" data-caption="Euler Angles (On Wrist)" onclick="openFullscreen(this)" />
-        <img src="img/OnCourt/OnCourt4.png" alt="Wrist fit" data-caption="Final Watch Assembly CAD Drawing" onclick="openFullscreen(this)" />
-
+        <img src="img/OnCourt/OnCourt4.png" alt="Wrist fit" data-caption="Final Watch Assembly Drawing" onclick="openFullscreen(this)" />
         <div class="carousel-dots"></div>
-        <button class="arrow right" onclick="nextImage()" aria-label="Next slide">&#10095;</button>
+        <button class="arrow right" onclick="nextImage()" aria-label="Next">&#10095;</button>
       </div>
     </div>
   </section>
@@ -75,33 +69,31 @@
   <section class="section project-content alt-section">
     <div class="container content">
       <p><strong>🔍 Context / Problem:</strong><br>
-      Amateur tennis players often lack resources for personal training and tools to accurately quantify wrist motion, making it difficult to improve their technique and overall performance.
+      Amateur tennis players often lack tools to track wrist motion, limiting performance feedback and technique improvement.
       </p>
 
       <p><strong>🛠️ My Role:</strong><br>
-      Reviewed existing patents to explore product opportunities and conducted user interviews to gather feedback on needs and usability. 
-      Led the mechanical design and prototyping of a wearable device, emphasizing compactness, seamless sensor integration, and comfort during active use.
+      Conducted patent research, user interviews, and led mechanical design of a compact, wearable motion-tracking device.
       </p>
 
       <p><strong>💡 Solution Summary:</strong><br>
-      Designed a wrist-mounted enclosure that houses an ESP32 microcontroller and MPU6050 IMU to track arm motion. 
-      The design emphasized compactness, quick strap-on usability, and minimal interference during active play.
+      Developed a wrist-mounted enclosure for an ESP32 and MPU6050 IMU to measure wrist dynamics during play.
       </p>
 
       <p><strong>🔧 Technical Highlights:</strong></p>
       <ul>
-        <li>Used OpenPose in early development to test the viability of motion capture.</li>
-        <li>Created the enclosure in SolidWorks, sized to fit the wrist and arranged to support all internal components.</li>
-        <li>Fabricated FDM 3D-printed prototypes with a two-part housing for easy battery access and replacement.</li>
-        <li>Integrated ESP32 and IMU for real-time motion tracking and data collection.</li>
+        <li>Tested motion tracking using OpenPose in early prototypes.</li>
+        <li>CAD enclosure in SolidWorks to support secure sensor placement.</li>
+        <li>3D-printed two-part FDM housing for modularity and battery access.</li>
+        <li>ESP32 + IMU integration for real-time motion data collection.</li>
       </ul>
 
       <p><strong>🏁 Results / Key Outcomes:</strong></p>
       <ul>
-        <li>Final prototype achieved a lightweight form factor under 40g with a secure fit during dynamic movement.</li>
-        <li>System successfully captured wrist rotation data suitable for performance feedback and further analysis.</li>
+        <li>Final design weighed under 40g and stayed secure during movement.</li>
+        <li>Successfully captured wrist orientation data for performance analysis.</li>
       </ul>
-      <!-- Interactive 3D Model Viewer -->
+
       <p><strong>🧊 Interactive 3D Model:</strong></p>
       <model-viewer src="img/OnCourt/assemblynew.glb"
                     alt="Wearable Enclosure 3D Model"
@@ -112,22 +104,16 @@
                     shadow-intensity="0.9"
                     camera-orbit="0deg 0deg 30%"
                     field-of-view="20deg">
-                    <!-- style="width: 100%; height: 500px; background-color: #000;"> -->
-      </model-viewer>  
-
-
-
-
-
+      </model-viewer>
     </div>
   </section>
 
   <section class="pdf-placeholder white-bg">
     <div class="container">
-      <p><strong>Project Report</strong></p>
-      <iframe src="files/oncourt_project.pdf#toolbar=0&navpanes=0&scrollbar=0" width="100%" height="600px" style="border: none;"></iframe>
+      <p><strong>📄 Project Report:</strong></p>
+      <iframe src="files/oncourt_project.pdf#toolbar=0&navpanes=0&scrollbar=0" width="100%" height="600" style="border:none;"></iframe>
       <div class="pdf-buttons">
-        <a href="files/oncourt_project.pdf" target="_blank" class="btn btn-white">Fullscreen</a>
+        <a href="files/oncourt_project.pdf" target="_blank" class="btn btn-white">View Fullscreen</a>
       </div>
     </div>
   </section>
@@ -136,7 +122,7 @@
     <div class="container">
       <div class="footer-row">
         <div class="social-links-row footer-social">
-          <a href="http://linkedin.com/in/maxtlee" target="_blank" title="LinkedIn">
+          <a href="https://linkedin.com/in/maxtlee" target="_blank" title="LinkedIn">
             <img src="img/social_icons/linkedin.svg" alt="LinkedIn profile" />
           </a>
         </div>
@@ -145,15 +131,12 @@
   </footer>
 
   <div id="goToTop" class="goToTop">
-    <a href="#top">
-      <img src="img/icons/arrow_up.svg" alt="Back to top" />
-    </a>
+    <a href="#top"><img src="img/icons/arrow_up.svg" alt="Back to top" /></a>
   </div>
 
   <script>
-    const logo = document.getElementById("dynamic-logo");
-    const today = new Date();
-    logo.textContent = today.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+    document.getElementById("dynamic-logo").textContent =
+      new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
 
     const goToTop = document.getElementById("goToTop");
     const header = document.getElementById("header");
@@ -162,29 +145,29 @@
       header.classList.toggle("header-sticky", window.scrollY > 50);
     });
 
-    const images = document.querySelectorAll('.carousel img');
-    const dotsContainer = document.querySelector('.carousel-dots');
+    const images = document.querySelectorAll(".carousel img");
+    const dotsContainer = document.querySelector(".carousel-dots");
     let current = 0;
     let intervalId;
 
     function createDots() {
       images.forEach((_, index) => {
-        const dot = document.createElement('span');
-        dot.classList.add('dot');
-        dot.addEventListener('click', () => goToImage(index));
+        const dot = document.createElement("span");
+        dot.classList.add("dot");
+        dot.addEventListener("click", () => goToImage(index));
         dotsContainer.appendChild(dot);
       });
     }
 
     function updateDots(index) {
-      const dots = document.querySelectorAll(".dot");
-      dots.forEach(dot => dot.classList.remove("active"));
-      if (dots[index]) dots[index].classList.add("active");
+      document.querySelectorAll(".dot").forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
     }
 
     function showImage(index) {
-      images.forEach(img => img.classList.remove('active'));
-      images[index].classList.add('active');
+      images.forEach(img => img.classList.remove("active"));
+      images[index].classList.add("active");
       updateDots(index);
     }
 
@@ -228,25 +211,21 @@
                 margin: 0;
                 background: #000;
                 color: #fff;
-                font-family: Arial, sans-serif;
+                font-family: sans-serif;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
                 align-items: center;
+                justify-content: center;
                 height: 100vh;
-                padding: 1rem;
-                box-sizing: border-box;
               }
               img {
-                max-width: 100vw;
+                max-width: 90vw;
                 max-height: 80vh;
               }
               .caption {
                 margin-top: 1rem;
-                font-size: 1.2rem;
+                font-size: 1rem;
                 color: #ccc;
-                text-align: center;
-                max-width: 90vw;
               }
             </style>
           </head>
@@ -257,7 +236,6 @@
         </html>
       `);
     }
-
 
     createDots();
     showImage(current);
