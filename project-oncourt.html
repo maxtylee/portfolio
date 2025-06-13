@@ -56,10 +56,15 @@
 
       <div class="carousel" onmouseenter="pauseCarousel()" onmouseleave="resumeCarousel()">
         <button class="arrow left" onclick="prevImage()" aria-label="Previous slide">&#10094;</button>
-        <img src="img/OnCourt/OnCourt.png" class="active" alt="Slide 1" onclick="openFullscreen(this)" />
+        <!-- <img src="img/OnCourt/OnCourt.png" class="active" alt="Slide 1" onclick="openFullscreen(this)" />
         <img src="img/OnCourt/OnCourt2.png" alt="Slide 2" onclick="openFullscreen(this)" />
         <img src="img/OnCourt/OnCourt3.PNG" alt="Slide 3" onclick="openFullscreen(this)" />
-        <img src="img/OnCourt/OnCourt4.png" alt="Slide 4" onclick="openFullscreen(this)" />
+        <img src="img/OnCourt/OnCourt4.png" alt="Slide 4" onclick="openFullscreen(this)" /> -->
+        <img src="img/OnCourt/OnCourt.png" class="active" alt="Top view of enclosure" data-caption="Final Watch Assembly CAD" onclick="openFullscreen(this)" />
+        <img src="img/OnCourt/OnCourt2.png" alt="Side view" data-caption="ESP32 microcontroller and MPU6050 sensor module connected via electronic wiring on a perfboard" onclick="openFullscreen(this)" />
+        <img src="img/OnCourt/OnCourt3.PNG" alt="Exploded view" data-caption="Euler Angles (On Wrist)" onclick="openFullscreen(this)" />
+        <img src="img/OnCourt/OnCourt4.png" alt="Wrist fit" data-caption="Final Watch Assembly CAD Drawing" onclick="openFullscreen(this)" />
+
         <div class="carousel-dots"></div>
         <button class="arrow right" onclick="nextImage()" aria-label="Next slide">&#10095;</button>
       </div>
@@ -211,7 +216,7 @@
 
     function openFullscreen(img) {
       const src = img.src;
-      const caption = img.alt || "Image"; // Use alt text or a default caption
+      const caption = img.getAttribute("data-caption") || img.alt || "Image";
       const win = window.open("", "_blank");
       win.document.write(`
         <html>
