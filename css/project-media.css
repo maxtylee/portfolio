@@ -1,0 +1,111 @@
+/* Applies only to project pages */
+body.project-page {
+  font-family: 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;
+}
+
+/* General container and padding fixes */
+.project-page .project-content {
+  padding: 2rem;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* PDF viewer scaling */
+.project-page .pdf-container {
+  width: 100%;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+.project-page .pdf-container iframe,
+.project-page .pdf-container embed {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 500px;
+  border: none;
+}
+
+/* Typography scaling for small screens */
+@media (max-width: 1024px) {
+  .project-page .project-content h1 {
+    font-size: 28px;
+  }
+
+  .project-page .project-content h2 {
+    font-size: 24px;
+  }
+
+  .project-page .project-content h3 {
+    font-size: 20px;
+  }
+
+  .project-page .project-content p,
+  .project-page .project-content li,
+  .project-page .project-content div,
+  .project-page .project-content span {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-page .project-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .project-page .project-content h1 {
+    font-size: 24px;
+  }
+
+  .project-page .project-content h2 {
+    font-size: 20px;
+  }
+
+  .project-page .project-content h3 {
+    font-size: 18px;
+  }
+
+  .project-page .project-content p,
+  .project-page .project-content li,
+  .project-page .project-content div,
+  .project-page .project-content span {
+    font-size: 14px;
+  }
+
+  .project-page .pdf-container iframe,
+  .project-page .pdf-container embed {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-page .project-content {
+    padding: 1rem 0.75rem;
+  }
+
+  .project-page .project-content h1 {
+    font-size: 20px;
+  }
+
+  .project-page .project-content h2 {
+    font-size: 18px;
+  }
+
+  .project-page .project-content h3 {
+    font-size: 16px;
+  }
+
+  .project-page .project-content p,
+  .project-page .project-content li,
+  .project-page .project-content div,
+  .project-page .project-content span {
+    font-size: 13.5px;
+  }
+
+  .project-page .pdf-container iframe,
+  .project-page .pdf-container embed {
+    min-height: 300px;
+  }
+}
