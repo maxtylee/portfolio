@@ -211,9 +211,47 @@
 
     function openFullscreen(img) {
       const src = img.src;
+      const caption = img.alt || "Image"; // Use alt text or a default caption
       const win = window.open("", "_blank");
-      win.document.write(`<html><head><title>Fullscreen</title><style>body{margin:0;background:#000;display:flex;justify-content:center;align-items:center;height:100vh}img{max-width:100vw;max-height:100vh}</style></head><body><img src=\"${src}\" alt=\"fullscreen\" /></body></html>`);
+      win.document.write(`
+        <html>
+          <head>
+            <title>Fullscreen</title>
+            <style>
+              body {
+                margin: 0;
+                background: #000;
+                color: #fff;
+                font-family: Arial, sans-serif;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                padding: 1rem;
+                box-sizing: border-box;
+              }
+              img {
+                max-width: 100vw;
+                max-height: 80vh;
+              }
+              .caption {
+                margin-top: 1rem;
+                font-size: 1.2rem;
+                color: #ccc;
+                text-align: center;
+                max-width: 90vw;
+              }
+            </style>
+          </head>
+          <body>
+            <img src="${src}" alt="${caption}" />
+            <div class="caption">${caption}</div>
+          </body>
+        </html>
+      `);
     }
+
 
     createDots();
     showImage(current);
