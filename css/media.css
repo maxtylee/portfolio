@@ -241,4 +241,27 @@
     visibility: visible !important;
   }
 }
+@media (max-width: 768px) {
+  .footer-social,
+  .about-social-list,
+  .social-links-row {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin-top: 1rem;
+  }
+
+  .footer-social img,
+  .social-links-row img {
+    display: inline-block !important;
+    width: 24px !important;
+    height: 24px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+
 
