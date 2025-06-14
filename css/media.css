@@ -220,3 +220,25 @@
     text-align: center;
   }
 }
+@media (max-width: 768px) {
+  .footer-social {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .footer-social a {
+    display: inline-block !important;
+  }
+
+  .footer-social img {
+    height: 24px !important;
+    width: 24px !important;
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+

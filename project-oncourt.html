@@ -257,6 +257,32 @@
       })
     );
   </script>
+  <script>
+    // Enable carousel swipe for phones & tablets (touch devices only)
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+    if (isTouchDevice) {
+      const carousel = document.querySelector('.carousel');
+      let startX = 0;
+
+      carousel.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+      });
+
+      carousel.addEventListener('touchend', e => {
+        const endX = e.changedTouches[0].clientX;
+        const diff = endX - startX;
+
+        if (Math.abs(diff) > 50) {
+          if (diff > 0) {
+            prevImage(); // swipe right
+          } else {
+            nextImage(); // swipe left
+          }
+        }
+      });
+    }
+  </script>
 
 
 </body>
