@@ -110,12 +110,27 @@
   <section class="pdf-placeholder white-bg">
     <div class="container">
       <p><strong>📄 Project Report:</strong></p>
-      <iframe src="files/oncourt_project.pdf#toolbar=0&navpanes=0&scrollbar=0" width="100%" height="600" style="border:none;"></iframe>
-      <div class="pdf-buttons">
-        <a href="files/oncourt_project.pdf" target="_blank" class="btn btn-white">View Fullscreen</a>
+
+      <div class="pdf-frame-wrapper">
+        <iframe 
+          src="files/oncourt_project.pdf" 
+          width="100%" 
+          height="600"
+          style="border: none;"
+        ></iframe>
+
+        <div class="pdf-controls">
+          <a href="files/oncourt_project.pdf" target="_blank" class="btn btn-white">
+            🔎 View Fullscreen
+          </a>
+          <span class="pdf-instruction">
+            Use the toolbar above to zoom, scroll pages, or expand to full screen
+          </span>
+        </div>
       </div>
     </div>
   </section>
+
 
   <footer class="footer custom-footer">
     <div class="container">
@@ -246,6 +261,12 @@
     navBtn.addEventListener("click", () => {
       nav.classList.toggle("open");
     });
+
+    document.querySelectorAll(".nav-link").forEach(link =>
+      link.addEventListener("click", () => {
+        nav.classList.remove("open");
+      })
+    );
   </script>
 
 

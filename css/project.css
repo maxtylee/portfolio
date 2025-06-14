@@ -230,3 +230,29 @@ model-viewer {
     font-size: 1.25rem;
   }
 }
+.pdf-frame-wrapper {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  background: #fff;
+  padding-bottom: 1rem;
+}
+
+.pdf-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.pdf-controls .btn {
+  font-size: 12px;
+  padding: 0.6rem 1.2rem;
+}
+
+.pdf-instruction {
+  font-size: 0.9rem;
+  color: var(--gray-text-color);
+}

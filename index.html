@@ -494,6 +494,22 @@
       const options = { year: 'numeric', month: 'long', day: 'numeric' };
       logo.textContent = today.toLocaleDateString(undefined, options); // e.g., May 5, 2025
     </script>
+    <script>
+      const navBtn = document.getElementById("nav-btn");
+      const nav = document.querySelector(".nav");
+
+      // Toggle menu open/close
+      navBtn.addEventListener("click", () => {
+        nav.classList.toggle("open");
+      });
+
+      // Close menu when a link is clicked (on mobile)
+      document.querySelectorAll(".nav-link").forEach(link =>
+        link.addEventListener("click", () => {
+          nav.classList.remove("open");
+        })
+      );
+    </script>
 
   </body>
 </html>
