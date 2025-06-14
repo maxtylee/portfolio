@@ -726,34 +726,3 @@ h5 {
   margin-top: -2.5rem;
   margin-bottom: 0.5rem;
 }
-
-
-
-/* Force desktop layout on all devices */
-.hero-row {
-  flex-direction: row !important;
-}
-.about-row {
-  display: grid !important;
-  grid-template-columns: 1.3fr 1fr !important;
-}
-.services-row {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  justify-content: space-between !important;
-}
-.project-box {
-  max-width: 510px !important;
-  height: 275px !important;
-}
-.title {
-  font-size: 44px !important;
-  margin-bottom: 54px !important;
-}
-img {
-  max-width: none !important;
-  height: auto !important;
-}
-body {
-  font-size: 16px !important;
-}
