@@ -241,36 +241,6 @@
     visibility: visible !important;
   }
 }
-@media (max-width: 768px) {
-  .footer-social,
-  .about-social-list,
-  .social-links-row {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 16px !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  .footer-social a,
-  .about-social-list a,
-  .social-links-row a {
-    display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  .footer-social img,
-  .about-social-list img,
-  .social-links-row img {
-    display: inline-block !important;
-    height: 28px !important;
-    width: 28px !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-}
 
 
 
