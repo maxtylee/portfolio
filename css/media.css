@@ -10,7 +10,45 @@
     zoom: 1;
   }
 
-  /* No layout or font changes applied */
+  .header {
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .container-lg {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+  }
+
+  .header-sticky {
+    left: 0;
+    right: 0;
+  }
+
+  /* Override legacy mobile layout rules */
+  .nav-list {
+    display: flex !important;
+    flex-direction: row !important;
+  }
+
+  .nav-btn {
+    display: none !important;
+  }
+
+  .hero-row {
+    flex-direction: row !important;
+  }
+
+  .title {
+    font-size: 48px !important;
+  }
+
+  .project-box {
+    max-width: 454px !important;
+  }
 }
 
 /* For tablets: no resizing, keep full layout visible and zoomable */
