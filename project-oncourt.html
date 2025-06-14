@@ -262,25 +262,27 @@
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
     if (isTouchDevice) {
-      const carousel = document.querySelector('.carousel');
-      let startX = 0;
-
-      carousel.addEventListener('touchstart', e => {
-        startX = e.touches[0].clientX;
-      });
-
       carousel.addEventListener('touchend', e => {
         const endX = e.changedTouches[0].clientX;
         const diff = endX - startX;
 
         if (Math.abs(diff) > 50) {
+          const currentImg = carousel.querySelector('.carousel img.active');
+
           if (diff > 0) {
-            prevImage(); // swipe right
+            prevImage();
+            currentImg.classList.add('slide-right');
           } else {
-            nextImage(); // swipe left
+            nextImage();
+            currentImg.classList.add('slide-left');
           }
+
+          setTimeout(() => {
+            currentImg.classList.remove('slide-left', 'slide-right');
+          }, 300);
         }
       });
+
     }
   </script>
 

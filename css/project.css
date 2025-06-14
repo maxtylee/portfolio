@@ -230,3 +230,24 @@ model-viewer {
     font-size: 1.25rem;
   }
 }
+.carousel img {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.carousel img.slide-left {
+  animation: slideLeft 0.3s forwards;
+}
+
+.carousel img.slide-right {
+  animation: slideRight 0.3s forwards;
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+@keyframes slideRight {
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
