@@ -184,8 +184,3 @@
   }
 }
 
-@media (max-width: 480px) {
-  iframe {
-    height: 400px !important;
-  }
-}

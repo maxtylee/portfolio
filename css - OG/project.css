@@ -220,13 +220,3 @@ model-viewer {
   cursor: grab;
   outline: none;
 }
-@media (max-width: 480px) {
-  .project-content p,
-  .project-content ul {
-    font-size: 1rem;
-  }
-
-  .project-content strong {
-    font-size: 1.25rem;
-  }
-}

@@ -240,5 +240,14 @@
     showImage(current);
     startCarousel();
   </script>
+  <script>
+    const navBtn = document.getElementById("nav-btn");
+    const nav = document.querySelector(".nav");
+    navBtn.addEventListener("click", () => {
+      nav.classList.toggle("open");
+    });
+  </script>
+
+
 </body>
 </html>
