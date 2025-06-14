@@ -1,186 +1,67 @@
-@media (max-width: 1320px) {
-  .container-lg {
-    max-width: 1200px;
-  }
+/* === GLOBAL RESPONSIVE SETTINGS (MINIMAL) === */
 
-  .hero-content {
-    padding: 0;
-  }
+/* Allow pinch-to-zoom: make sure your HTML file has this meta tag:
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+*/
 
-  .header-nav {
-    padding: 0;
-  }
+/* Optional: Center content and prevent it from becoming too narrow */
+.container-lg {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
 }
 
-@media (max-width: 1200px) {
-  .title {
-    font-size: 40px;
-  }
-
-  .about-content {
-    padding-right: 0;
-  }
-
-  .services-row {
-    justify-content: center;
-  }
-
-  .project-box {
-    max-width: 454px;
-  }
-
-  .about,
-  .projects,
-  .contact {
-    padding: 80px 0;
-  }
+/* Optional: Give layout some minimum width to avoid excessive squishing */
+body {
+  min-width: 1024px;
 }
 
-@media (max-width: 977px) {
-  .title {
-    font-size: 36px;
-  }
-
-  .hero-row {
-    flex-direction: column;
-    row-gap: 40px;
-  }
-  .hero-content {
-    text-align: center;
-  }
-
-  .hero-img {
-    justify-content: center;
-  }
-
-  .about-social-list {
-    display: block;
-  }
-
-  .about-row {
-    grid-template-columns: 1fr;
-  }
-
-  .about-row {
-    row-gap: 50px;
-    margin-bottom: 50px;
-  }
-
-  .nav-list {
-    display: none;
-  }
-
-  .nav-btn {
-    display: block;
-  }
-
-  .nav.open .nav-list {
-    position: fixed;
-    inset: 0;
-    background-color: #fff;
-    z-index: 1;
-    padding: 46px 30px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    row-gap: 24px;
-    font-size: 48px;
-    font-weight: 500;
-  }
-
-  .nav-link {
-    color: #565a5b;
-  }
-
-  .nav-link.active {
-    color: #0c1618;
-  }
-
-  .nav-btn {
-    position: absolute;
-    z-index: 9;
-    top: 36px;
-    right: 30px;
-  }
-
-  .nav.open .nav-btn {
-    position: fixed;
-  }
-
-  .header-nav {
-    margin-bottom: 0;
-  }
-
-  .hero {
-    padding-top: 160px;
-  }
-
-  .social-links-row {
-    column-gap: 17px;
-    margin: 30px 0 30px;
-  }
-
-  .btn {
-    font-size: 11px;
-    padding: 0 20px;
-  }
-  .skill {
-    max-width: 460px;
-    margin-inline: auto;
-  }
-  .services-row {
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    row-gap: 50px;
-  }
-
-  .service-card-img {
-    height: 40px;
-  }
-
-  .project-box {
-    max-width: 327px;
-  }
-
-  .about,
-  .projects,
-  .contact {
-    padding: 5rem 0;
-  }
-
-  .title {
-    margin-bottom: 30px;
-  }
+/* Ensure hero and nav stay consistent on all screens */
+.hero-content,
+.header-nav,
+.hero-img,
+.nav-list {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-@media (max-width: 720px) {
-  .project-box {
-    max-width: 100%;
-  }
+/* Keep project boxes and grids looking desktop-like */
+.project-box {
+  max-width: 454px;
+  width: 100%;
 }
 
-@media (max-width: 406px) {
-  .hero-img {
-    flex: 1 1 100%;
-  }
-}
-@media (max-width: 977px) {
-  .social-links-row img {
-    display: inline-block !important;
-    height: 24px !important;
-    width: 24px !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  .social-links-row a {
-    display: inline-block;
-  }
-
-  .footer-social {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+/* Maintain service card layout without breaking into columns */
+.services-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 40px;
+  justify-content: center;
 }
 
+/* Buttons and social links */
+.btn {
+  font-size: 12px;
+  padding: 0 24px;
+}
+
+.social-links-row img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Skill section uniform across devices */
+.skill {
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+/* Optional: Typography consistency */
+h1, h2, h3, p, li, span, div {
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
