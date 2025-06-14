@@ -241,6 +241,28 @@
     visibility: visible !important;
   }
 }
+@media (max-width: 1024px) {
+  .pdf-placeholder iframe {
+    width: 100% !important;
+    height: 480px !important;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .pdf-placeholder .pdf-frame-wrapper {
+    overflow-x: auto;
+    text-align: center;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pdf-placeholder iframe {
+    height: 400px !important;
+  }
+}
 
 
 
