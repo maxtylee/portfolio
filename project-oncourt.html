@@ -258,33 +258,47 @@
     );
   </script>
   <script>
-    // Enable carousel swipe for phones & tablets (touch devices only)
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
     if (isTouchDevice) {
+      const carousel = document.querySelector('.carousel');
+      let startX = 0;
+
+      carousel.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+      });
+
       carousel.addEventListener('touchend', e => {
         const endX = e.changedTouches[0].clientX;
         const diff = endX - startX;
 
         if (Math.abs(diff) > 50) {
           const currentImg = carousel.querySelector('.carousel img.active');
+          currentImg.classList.remove('slide-left', 'slide-right');
 
           if (diff > 0) {
             prevImage();
-            currentImg.classList.add('slide-right');
+            requestAnimationFrame(() => {
+              const newImg = carousel.querySelector('.carousel img.active');
+              newImg.classList.add('slide-right');
+            });
           } else {
             nextImage();
-            currentImg.classList.add('slide-left');
+            requestAnimationFrame(() => {
+              const newImg = carousel.querySelector('.carousel img.active');
+              newImg.classList.add('slide-left');
+            });
           }
 
           setTimeout(() => {
-            currentImg.classList.remove('slide-left', 'slide-right');
+            const allImages = carousel.querySelectorAll('img');
+            allImages.forEach(img => img.classList.remove('slide-left', 'slide-right'));
           }, 300);
         }
       });
-
     }
   </script>
+
 
 
 </body>
