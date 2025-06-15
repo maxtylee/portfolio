@@ -117,7 +117,6 @@
           <button id="zoomInBtn" onclick="zoomPDF(0.1)" title="Zoom In">➕</button>
           <button id="zoomOutBtn" onclick="zoomPDF(-0.1)" title="Zoom Out" disabled>➖</button>
           <button onclick="toggleFullscreen()" title="Fullscreen">⛶</button>
-          <div class="zoom-display" id="zoomDisplay">100%</div>
         </div>
 
 
@@ -329,18 +328,15 @@
       const panel = document.querySelector('.pdf-scroll-panel');
       const zoomInBtn = document.getElementById('zoomInBtn');
       const zoomOutBtn = document.getElementById('zoomOutBtn');
-      const zoomDisplay = document.getElementById('zoomDisplay');
 
-      // Clamp zoom range between 1.0 and 2.5
+      // Clamp zoom
       currentZoom = Math.max(1, Math.min(2.5, currentZoom + delta));
 
-      // Apply zoom
-      panel.style.zoom = currentZoom;
+      // Apply transform scale to the scroll content
+      panel.style.transform = `scale(${currentZoom})`;
+      panel.style.transformOrigin = 'top left';
 
-      // Update zoom % label
-      zoomDisplay.textContent = `${Math.round(currentZoom * 100)}%`;
-
-      // Disable buttons at bounds
+      // Toggle buttons
       zoomInBtn.disabled = currentZoom >= 2.5;
       zoomOutBtn.disabled = currentZoom <= 1;
     }
@@ -356,22 +352,21 @@
       }
     }
 
-    // Optional: Reset zoom on fullscreen exit
+    // Reset zoom on fullscreen exit
     document.addEventListener('fullscreenchange', () => {
       if (!document.fullscreenElement) {
         const panel = document.querySelector('.pdf-scroll-panel');
-        const zoomDisplay = document.getElementById('zoomDisplay');
         const zoomInBtn = document.getElementById('zoomInBtn');
         const zoomOutBtn = document.getElementById('zoomOutBtn');
 
         currentZoom = 1;
-        panel.style.zoom = 1;
-        zoomDisplay.textContent = '100%';
+        panel.style.transform = 'scale(1)';
         zoomInBtn.disabled = false;
         zoomOutBtn.disabled = true;
       }
     });
   </script>
+
 
 
 
