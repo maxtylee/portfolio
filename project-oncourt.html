@@ -112,14 +112,14 @@
       <p class="report-title"><strong>Project Report</strong></p>
 
       <div class="pdf-scroll-wrapper">
-        <!-- Zoom/Fullscreen Buttons pinned in section -->
+        <!-- Zoom/Fullscreen Controls (stay fixed in top-left of scroll section) -->
         <div class="pdf-controls-overlay">
           <button id="zoomInBtn" onclick="zoomPDF(0.1)" title="Zoom In">➕</button>
           <button id="zoomOutBtn" onclick="zoomPDF(-0.1)" title="Zoom Out" disabled>➖</button>
           <button onclick="toggleFullscreen()" title="Fullscreen">⛶</button>
         </div>
 
-        <!-- Scrollable, zoomable image panel -->
+        <!-- Zoomable, scrollable PDF content -->
         <div class="pdf-scroll-panel">
           <img src="files/oncourtreport/oncourt_project_page-0001.jpg" class="pdf-image" alt="Page 1" />
           <img src="files/oncourtreport/oncourt_project_page-0002.jpg" class="pdf-image" alt="Page 2" />
@@ -141,6 +141,7 @@
       </div>
     </div>
   </section>
+
 
 
 
@@ -361,6 +362,7 @@
       }
     });
   </script>
+
 
 
 

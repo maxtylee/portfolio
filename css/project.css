@@ -171,9 +171,10 @@
 }
 
 .pdf-scroll-panel {
+  position: relative;
+  width: fit-content;
   transform-origin: top left;
   transition: transform 0.3s ease;
-  width: fit-content;
 }
 
 .pdf-image {
@@ -181,18 +182,16 @@
   height: auto;
   display: block;
   margin-bottom: 1.5rem;
-  transform-origin: top center;
-  transition: transform 0.2s ease;
 }
 
 .pdf-controls-overlay {
-  position: sticky;
+  position: absolute;
   top: 12px;
   left: 12px;
   z-index: 10;
   display: flex;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   padding: 4px 8px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -218,7 +217,6 @@
   cursor: not-allowed;
 }
 
-/* ===== PDF Buttons Below Viewer ===== */
 .pdf-buttons {
   margin-top: 1rem;
   display: flex;
