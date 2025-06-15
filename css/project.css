@@ -269,3 +269,23 @@ model-viewer {
   display: block;
 }
 
+.pdf-controls {
+  margin: 1rem 0 2rem;
+  text-align: center;
+}
+
+.pdf-controls button {
+  margin: 0 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--primary-accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pdf-controls button:hover {
+  background-color: var(--secondary-accent);
+}

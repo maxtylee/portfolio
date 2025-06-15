@@ -123,6 +123,11 @@
         <img src="files/oncourtreport/oncourt_project_page-0009.jpg" class="pdf-image" alt="Page 9" />
         <img src="files/oncourtreport/oncourt_project_page-0010.jpg" class="pdf-image" alt="Page 10" />
       </div>
+      <div class="pdf-controls">
+        <button onclick="zoomPDF(0.1)">➕ </button>
+        <button onclick="zoomPDF(-0.1)">➖ </button>
+        <button onclick="toggleFullscreen()">⛶</button>
+      </div>
 
       <div class="pdf-buttons">
         <a href="files/oncourt_project.pdf" target="_blank" class="btn btn-white">
@@ -131,17 +136,6 @@
       </div>
     </div>
   </section>
-
-
-
-
-
-
-
-
-
-
-
   <footer class="footer custom-footer">
     <div class="container">
       <div class="footer-row">
@@ -317,6 +311,28 @@
           }, 300);
         }
       });
+    }
+  </script>
+  <script>
+    let currentZoom = 1;
+
+    function zoomPDF(delta) {
+      currentZoom = Math.max(0.5, Math.min(2.5, currentZoom + delta));
+      document.querySelectorAll('.pdf-image').forEach(img => {
+        img.style.transform = `scale(${currentZoom})`;
+        img.style.transformOrigin = 'top center';
+      });
+    }
+
+    function toggleFullscreen() {
+      const panel = document.querySelector('.pdf-scroll-panel');
+      if (!document.fullscreenElement) {
+        panel.requestFullscreen().catch(err => {
+          alert(`Error trying to enable full-screen mode: ${err.message}`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
     }
   </script>
 
