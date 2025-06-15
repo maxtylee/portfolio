@@ -151,11 +151,11 @@
 }
 
 .section-alt {
-  background-color: var(--gray-color-3); /* or another suitable variable or hex code */
+  background-color: var(--gray-color-3);
   padding: 7rem 0;
 }
 
-/* ===== PDF Section  ===== */
+/* ===== PDF Section ===== */
 .pdf-placeholder {
   text-align: center;
   font-size: 1.5rem;
@@ -163,7 +163,62 @@
   background-color: white;
 }
 
-/* ===== PDF Buttons ===== */
+.pdf-scroll-wrapper {
+  position: relative;
+  max-height: 80vh;
+  overflow: auto;
+  background-color: #fff;
+}
+
+.pdf-scroll-panel {
+  transform-origin: top left;
+  transition: transform 0.3s ease;
+  width: fit-content;
+}
+
+.pdf-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1.5rem;
+  transform-origin: top center;
+  transition: transform 0.2s ease;
+}
+
+.pdf-controls-overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 4px 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-controls-overlay button {
+  background-color: var(--primary-accent);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pdf-controls-overlay button:hover {
+  background-color: var(--secondary-accent);
+}
+
+.pdf-controls-overlay button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ===== PDF Buttons Below Viewer ===== */
 .pdf-buttons {
   margin-top: 1rem;
   display: flex;
@@ -184,6 +239,7 @@
 .goToTop.reveal {
   opacity: 1;
 }
+
 /* Project Skills Section */
 .project-skills {
   padding: 3rem 0;
@@ -209,17 +265,18 @@
 .full-width-section {
   width: 100vw;
   margin-left: calc(-1 * ((100vw - 100%) / 2));
-  /* background-color: var(--primary-bg-color); or white, depending on your design */
 }
-/* ===== Model Viewer Customization ===== */
+
+/* ===== Model Viewer ===== */
 model-viewer {
-  /* position: center; */
   width: 100%;
   height: 500px;
   background-color: transparent;
   cursor: grab;
   outline: none;
 }
+
+/* ===== Mobile Font Adjustments ===== */
 @media (max-width: 480px) {
   .project-content p,
   .project-content ul {
@@ -230,6 +287,8 @@ model-viewer {
     font-size: 1.25rem;
   }
 }
+
+/* ===== Carousel Animation ===== */
 .carousel img {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -250,82 +309,4 @@ model-viewer {
 @keyframes slideRight {
   from { transform: translateX(-100%); opacity: 0; }
   to   { transform: translateX(0);     opacity: 1; }
-}
-
-.pdf-scroll-panel {
-  max-height: 80vh;
-  overflow-y: scroll;
-  border: 1px solid var(--gray-color-2);
-  padding: 1rem;
-  background-color: #fff;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
-}
-
-.pdf-image {
-  width: 100%;
-  height: auto;
-  margin-bottom: -5rem;
-  display: block;
-  transform-origin: top center;
-  transition: transform 0.2s ease;
-}
-
-
-.pdf-controls {
-  margin: 1rem 0 2rem;
-  text-align: center;
-}
-
-.pdf-controls button {
-  margin: 0 0.5rem;
-  padding: 0.6rem 1.2rem;
-  background-color: var(--primary-accent);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.pdf-controls button:hover {
-  background-color: var(--secondary-accent);
-}
-.pdf-scroll-wrapper {
-  position: relative;
-  max-height: 80vh;
-  /* overflow: hidden; */
-  overflow: auto;
-  transform-origin: top center;
-
-}
-
-.pdf-controls-overlay {
-  position: fixed;
-  top: 12px;
-  left: 12px;
-  z-index: 999;
-  display: flex;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.85);
-  padding: 4px 8px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-
-
-.pdf-controls-overlay button {
-  background-color: var(--primary-accent);
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 6px 10px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.pdf-controls-overlay button:hover {
-  background-color: var(--secondary-accent);
 }

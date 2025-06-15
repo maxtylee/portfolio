@@ -112,15 +112,14 @@
       <p class="report-title"><strong>Project Report</strong></p>
 
       <div class="pdf-scroll-wrapper">
-        <!-- Overlay Zoom/Fullscreen Controls (shown only in fullscreen) -->
+        <!-- Zoom/Fullscreen Buttons pinned in section -->
         <div class="pdf-controls-overlay">
           <button id="zoomInBtn" onclick="zoomPDF(0.1)" title="Zoom In">➕</button>
           <button id="zoomOutBtn" onclick="zoomPDF(-0.1)" title="Zoom Out" disabled>➖</button>
           <button onclick="toggleFullscreen()" title="Fullscreen">⛶</button>
         </div>
 
-
-        <!-- Scrollable Panel with Images -->
+        <!-- Scrollable, zoomable image panel -->
         <div class="pdf-scroll-panel">
           <img src="files/oncourtreport/oncourt_project_page-0001.jpg" class="pdf-image" alt="Page 1" />
           <img src="files/oncourtreport/oncourt_project_page-0002.jpg" class="pdf-image" alt="Page 2" />
@@ -142,6 +141,7 @@
       </div>
     </div>
   </section>
+
 
 
   <footer class="footer custom-footer">
@@ -329,14 +329,10 @@
       const zoomInBtn = document.getElementById('zoomInBtn');
       const zoomOutBtn = document.getElementById('zoomOutBtn');
 
-      // Clamp zoom
       currentZoom = Math.max(1, Math.min(2.5, currentZoom + delta));
-
-      // Apply transform scale to the scroll content
       panel.style.transform = `scale(${currentZoom})`;
       panel.style.transformOrigin = 'top left';
 
-      // Toggle buttons
       zoomInBtn.disabled = currentZoom >= 2.5;
       zoomOutBtn.disabled = currentZoom <= 1;
     }
@@ -352,7 +348,6 @@
       }
     }
 
-    // Reset zoom on fullscreen exit
     document.addEventListener('fullscreenchange', () => {
       if (!document.fullscreenElement) {
         const panel = document.querySelector('.pdf-scroll-panel');
@@ -366,6 +361,7 @@
       }
     });
   </script>
+
 
 
 
