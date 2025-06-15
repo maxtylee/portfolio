@@ -252,9 +252,19 @@ model-viewer {
   to   { transform: translateX(0);     opacity: 1; }
 }
 
+.pdf-scroll-panel {
+  max-height: 80vh;
+  overflow-y: scroll;
+  border: 1px solid var(--gray-color-2);
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
 .pdf-image {
-  display: block;
   width: 100%;
   height: auto;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  display: block;
 }
+
