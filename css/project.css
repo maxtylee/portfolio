@@ -265,9 +265,11 @@ model-viewer {
   width: 100%;
   height: auto;
   margin-bottom: -5rem;
-  /* margin-top: -10rem; */
   display: block;
+  transform-origin: top center;
+  transition: transform 0.2s ease;
 }
+
 
 .pdf-controls {
   margin: 1rem 0 2rem;

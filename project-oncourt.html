@@ -109,15 +109,17 @@
 
   <section class="pdf-placeholder white-bg">
     <div class="container">
-      <p style="margin-bottom: 2rem;"><strong>Project Report</strong></p>
+      <p class="report-title"><strong>Project Report</strong></p>
 
       <div class="pdf-scroll-wrapper">
+        <!-- Overlay Zoom/Fullscreen Controls (shown only in fullscreen) -->
         <div class="pdf-controls-overlay">
           <button onclick="zoomPDF(0.1)" title="Zoom In">➕</button>
           <button onclick="zoomPDF(-0.1)" title="Zoom Out">➖</button>
           <button onclick="toggleFullscreen()" title="Fullscreen">⛶</button>
         </div>
 
+        <!-- Scrollable Panel with Images -->
         <div class="pdf-scroll-panel">
           <img src="files/oncourtreport/oncourt_project_page-0001.jpg" class="pdf-image" alt="Page 1" />
           <img src="files/oncourtreport/oncourt_project_page-0002.jpg" class="pdf-image" alt="Page 2" />
@@ -139,6 +141,7 @@
       </div>
     </div>
   </section>
+
 
   <footer class="footer custom-footer">
     <div class="container">
@@ -321,16 +324,16 @@
     let currentZoom = 1;
 
     function zoomPDF(delta) {
-      currentZoom = Math.max(0.5, Math.min(2.5, currentZoom + delta));
-      const panel = document.querySelector('.pdf-scroll-panel');
-      panel.style.transform = `scale(${currentZoom})`;
-      panel.style.transformOrigin = 'top center';
+      currentZoom = Math.max(1, Math.min(2.5, currentZoom + delta)); // No zoom below 1
+      document.querySelectorAll('.pdf-image').forEach(img => {
+        img.style.transform = `scale(${currentZoom})`;
+      });
     }
 
     function toggleFullscreen() {
-      const panel = document.querySelector('.pdf-scroll-panel');
+      const wrapper = document.querySelector('.pdf-scroll-wrapper');
       if (!document.fullscreenElement) {
-        panel.requestFullscreen().catch(err => {
+        wrapper.requestFullscreen().catch(err => {
           alert(`Error enabling fullscreen: ${err.message}`);
         });
       } else {
@@ -338,7 +341,6 @@
       }
     }
   </script>
-
 
 
 
