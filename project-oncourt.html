@@ -109,33 +109,37 @@
 
   <section class="pdf-placeholder white-bg">
     <div class="container">
-      <p><strong>Project Report</strong></p>
+      <p style="margin-bottom: 2rem;"><strong>Project Report</strong></p>
 
-      <div class="pdf-scroll-panel">
-        <img src="files/oncourtreport/oncourt_project_page-0001.jpg" class="pdf-image" alt="Page 1" />
-        <img src="files/oncourtreport/oncourt_project_page-0002.jpg" class="pdf-image" alt="Page 2" />
-        <img src="files/oncourtreport/oncourt_project_page-0003.jpg" class="pdf-image" alt="Page 3" />
-        <img src="files/oncourtreport/oncourt_project_page-0004.jpg" class="pdf-image" alt="Page 4" />
-        <img src="files/oncourtreport/oncourt_project_page-0005.jpg" class="pdf-image" alt="Page 5" />
-        <img src="files/oncourtreport/oncourt_project_page-0006.jpg" class="pdf-image" alt="Page 6" />
-        <img src="files/oncourtreport/oncourt_project_page-0007.jpg" class="pdf-image" alt="Page 7" />
-        <img src="files/oncourtreport/oncourt_project_page-0008.jpg" class="pdf-image" alt="Page 8" />
-        <img src="files/oncourtreport/oncourt_project_page-0009.jpg" class="pdf-image" alt="Page 9" />
-        <img src="files/oncourtreport/oncourt_project_page-0010.jpg" class="pdf-image" alt="Page 10" />
-      </div>
-      <div class="pdf-controls">
-        <button onclick="zoomPDF(0.1)">➕ </button>
-        <button onclick="zoomPDF(-0.1)">➖ </button>
-        <button onclick="toggleFullscreen()">⛶</button>
+      <div class="pdf-scroll-wrapper">
+        <div class="pdf-controls-overlay">
+          <button onclick="zoomPDF(0.1)" title="Zoom In">➕</button>
+          <button onclick="zoomPDF(-0.1)" title="Zoom Out">➖</button>
+          <button onclick="toggleFullscreen()" title="Fullscreen">⛶</button>
+        </div>
+
+        <div class="pdf-scroll-panel">
+          <img src="files/oncourtreport/oncourt_project_page-0001.jpg" class="pdf-image" alt="Page 1" />
+          <img src="files/oncourtreport/oncourt_project_page-0002.jpg" class="pdf-image" alt="Page 2" />
+          <img src="files/oncourtreport/oncourt_project_page-0003.jpg" class="pdf-image" alt="Page 3" />
+          <img src="files/oncourtreport/oncourt_project_page-0004.jpg" class="pdf-image" alt="Page 4" />
+          <img src="files/oncourtreport/oncourt_project_page-0005.jpg" class="pdf-image" alt="Page 5" />
+          <img src="files/oncourtreport/oncourt_project_page-0006.jpg" class="pdf-image" alt="Page 6" />
+          <img src="files/oncourtreport/oncourt_project_page-0007.jpg" class="pdf-image" alt="Page 7" />
+          <img src="files/oncourtreport/oncourt_project_page-0008.jpg" class="pdf-image" alt="Page 8" />
+          <img src="files/oncourtreport/oncourt_project_page-0009.jpg" class="pdf-image" alt="Page 9" />
+          <img src="files/oncourtreport/oncourt_project_page-0010.jpg" class="pdf-image" alt="Page 10" />
+        </div>
       </div>
 
       <div class="pdf-buttons">
         <a href="files/oncourt_project.pdf" target="_blank" class="btn btn-white">
-          Open Full PDF
+          View or Download Full PDF
         </a>
       </div>
     </div>
   </section>
+
   <footer class="footer custom-footer">
     <div class="container">
       <div class="footer-row">
