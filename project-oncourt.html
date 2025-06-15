@@ -116,7 +116,7 @@
         <div class="pdf-controls-overlay">
           <button id="zoomInBtn" onclick="zoomPDF(0.1)" title="Zoom In">➕</button>
           <button id="zoomOutBtn" onclick="zoomPDF(-0.1)" title="Zoom Out" disabled>➖</button>
-          <!-- <button onclick="toggleFullscreen()" title="Fullscreen">⛶</button> -->
+          <button onclick="toggleFullscreen()" title="Fullscreen">⛶</button>
         </div>
 
         <!-- Scrollable and zoomable image container -->
@@ -341,6 +341,13 @@
 
     function toggleFullscreen() {
       const wrapper = document.querySelector('.pdf-scroll-wrapper');
+
+      if (/Mobi|Android/i.test(navigator.userAgent)) {
+        // Mobile fallback – open in new tab
+        window.open("files/oncourt_project.pdf", "_blank");
+        return;
+      }
+
       if (!document.fullscreenElement) {
         wrapper.requestFullscreen().catch(err => {
           alert(`Error enabling fullscreen: ${err.message}`);
@@ -349,6 +356,7 @@
         document.exitFullscreen();
       }
     }
+
 
     document.addEventListener('fullscreenchange', () => {
       if (!document.fullscreenElement) {
