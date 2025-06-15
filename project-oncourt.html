@@ -114,10 +114,12 @@
       <div class="pdf-scroll-wrapper">
         <!-- Overlay Zoom/Fullscreen Controls (shown only in fullscreen) -->
         <div class="pdf-controls-overlay">
-          <button onclick="zoomPDF(0.1)" title="Zoom In">➕</button>
-          <button onclick="zoomPDF(-0.1)" title="Zoom Out">➖</button>
+          <button id="zoomInBtn" onclick="zoomPDF(0.1)" title="Zoom In">➕</button>
+          <button id="zoomOutBtn" onclick="zoomPDF(-0.1)" title="Zoom Out" disabled>➖</button>
           <button onclick="toggleFullscreen()" title="Fullscreen">⛶</button>
+          <div class="zoom-display" id="zoomDisplay">100%</div>
         </div>
+
 
         <!-- Scrollable Panel with Images -->
         <div class="pdf-scroll-panel">
@@ -324,10 +326,23 @@
     let currentZoom = 1;
 
     function zoomPDF(delta) {
-      currentZoom = Math.max(1, Math.min(2.5, currentZoom + delta)); // No zoom below 1
-      document.querySelectorAll('.pdf-image').forEach(img => {
-        img.style.transform = `scale(${currentZoom})`;
-      });
+      const panel = document.querySelector('.pdf-scroll-panel');
+      const zoomInBtn = document.getElementById('zoomInBtn');
+      const zoomOutBtn = document.getElementById('zoomOutBtn');
+      const zoomDisplay = document.getElementById('zoomDisplay');
+
+      // Clamp zoom range between 1.0 and 2.5
+      currentZoom = Math.max(1, Math.min(2.5, currentZoom + delta));
+
+      // Apply zoom
+      panel.style.zoom = currentZoom;
+
+      // Update zoom % label
+      zoomDisplay.textContent = `${Math.round(currentZoom * 100)}%`;
+
+      // Disable buttons at bounds
+      zoomInBtn.disabled = currentZoom >= 2.5;
+      zoomOutBtn.disabled = currentZoom <= 1;
     }
 
     function toggleFullscreen() {
@@ -340,7 +355,24 @@
         document.exitFullscreen();
       }
     }
+
+    // Optional: Reset zoom on fullscreen exit
+    document.addEventListener('fullscreenchange', () => {
+      if (!document.fullscreenElement) {
+        const panel = document.querySelector('.pdf-scroll-panel');
+        const zoomDisplay = document.getElementById('zoomDisplay');
+        const zoomInBtn = document.getElementById('zoomInBtn');
+        const zoomOutBtn = document.getElementById('zoomOutBtn');
+
+        currentZoom = 1;
+        panel.style.zoom = 1;
+        zoomDisplay.textContent = '100%';
+        zoomInBtn.disabled = false;
+        zoomOutBtn.disabled = true;
+      }
+    });
   </script>
+
 
 
 
