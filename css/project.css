@@ -264,8 +264,8 @@ model-viewer {
 .pdf-image {
   width: 100%;
   height: auto;
-  margin-bottom: -10rem;
-  margin-top: -10rem;
+  margin-bottom: -5rem;
+  /* margin-top: -10rem; */
   display: block;
 }
 
