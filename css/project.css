@@ -186,7 +186,7 @@
 }
 
 .pdf-controls-overlay {
-  position: absolute;
+  position: sticky;
   top: 12px;
   left: 12px;
   z-index: 10;
