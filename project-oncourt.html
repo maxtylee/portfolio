@@ -112,25 +112,25 @@
       <p class="report-title"><strong>Project Report</strong></p>
 
       <div class="pdf-scroll-wrapper">
-        <!-- ✅ Buttons OUTSIDE zoomed area, pinned absolutely -->
+        <!-- Controls: Stay visible in top-left of scroll section -->
         <div class="pdf-controls-overlay">
-          <button id="zoomInBtn" onclick="zoomPDF(0.1)">➕</button>
-          <button id="zoomOutBtn" onclick="zoomPDF(-0.1)" disabled>➖</button>
-          <button onclick="toggleFullscreen()">⛶</button>
+          <button id="zoomInBtn" onclick="zoomPDF(0.1)" title="Zoom In">➕</button>
+          <button id="zoomOutBtn" onclick="zoomPDF(-0.1)" title="Zoom Out" disabled>➖</button>
+          <button onclick="toggleFullscreen()" title="Fullscreen">⛶</button>
         </div>
 
-        <!-- ✅ Only this gets scaled -->
+        <!-- Scrollable and zoomable image container -->
         <div class="pdf-scroll-panel">
-          <img src="files/oncourtreport/oncourt_project_page-0001.jpg" class="pdf-image" />
-          <img src="files/oncourtreport/oncourt_project_page-0002.jpg" class="pdf-image" />
-          <img src="files/oncourtreport/oncourt_project_page-0003.jpg" class="pdf-image" />
-          <img src="files/oncourtreport/oncourt_project_page-0004.jpg" class="pdf-image" />
-          <img src="files/oncourtreport/oncourt_project_page-0005.jpg" class="pdf-image" />
-          <img src="files/oncourtreport/oncourt_project_page-0006.jpg" class="pdf-image" />
-          <img src="files/oncourtreport/oncourt_project_page-0007.jpg" class="pdf-image" />
-          <img src="files/oncourtreport/oncourt_project_page-0008.jpg" class="pdf-image" />
-          <img src="files/oncourtreport/oncourt_project_page-0009.jpg" class="pdf-image" />
-          <img src="files/oncourtreport/oncourt_project_page-0010.jpg" class="pdf-image" />
+          <img src="files/oncourtreport/oncourt_project_page-0001.jpg" class="pdf-image" alt="Page 1" />
+          <img src="files/oncourtreport/oncourt_project_page-0002.jpg" class="pdf-image" alt="Page 2" />
+          <img src="files/oncourtreport/oncourt_project_page-0003.jpg" class="pdf-image" alt="Page 3" />
+          <img src="files/oncourtreport/oncourt_project_page-0004.jpg" class="pdf-image" alt="Page 4" />
+          <img src="files/oncourtreport/oncourt_project_page-0005.jpg" class="pdf-image" alt="Page 5" />
+          <img src="files/oncourtreport/oncourt_project_page-0006.jpg" class="pdf-image" alt="Page 6" />
+          <img src="files/oncourtreport/oncourt_project_page-0007.jpg" class="pdf-image" alt="Page 7" />
+          <img src="files/oncourtreport/oncourt_project_page-0008.jpg" class="pdf-image" alt="Page 8" />
+          <img src="files/oncourtreport/oncourt_project_page-0009.jpg" class="pdf-image" alt="Page 9" />
+          <img src="files/oncourtreport/oncourt_project_page-0010.jpg" class="pdf-image" alt="Page 10" />
         </div>
       </div>
 
@@ -141,7 +141,6 @@
       </div>
     </div>
   </section>
-
 
 
 
@@ -364,7 +363,6 @@
       }
     });
   </script>
-
 
 
 
