@@ -322,23 +322,23 @@
 
     function zoomPDF(delta) {
       currentZoom = Math.max(0.5, Math.min(2.5, currentZoom + delta));
-      document.querySelectorAll('.pdf-image').forEach(img => {
-        img.style.transform = `scale(${currentZoom})`;
-        img.style.transformOrigin = 'top center';
-      });
+      const panel = document.querySelector('.pdf-scroll-panel');
+      panel.style.transform = `scale(${currentZoom})`;
+      panel.style.transformOrigin = 'top center';
     }
 
     function toggleFullscreen() {
       const panel = document.querySelector('.pdf-scroll-panel');
       if (!document.fullscreenElement) {
         panel.requestFullscreen().catch(err => {
-          alert(`Error trying to enable full-screen mode: ${err.message}`);
+          alert(`Error enabling fullscreen: ${err.message}`);
         });
       } else {
         document.exitFullscreen();
       }
     }
   </script>
+
 
 
 
