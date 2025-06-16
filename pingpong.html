@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1200, user-scalable=yes" />
+  <title>Ping-Pong Robotics – Max Lee</title>
+  <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/media.css" />
+  <link rel="stylesheet" href="css/project.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYWLDHBKVK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYWLDHBKVK');
+  </script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<script>
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
+</script>
+<body>
+  <header id="header" class="header">
+    <div class="container container-lg">
+      <div class="header-nav">
+        <a href="index.html#home" class="logo" id="dynamic-logo">Loading date...</a>
+        <a href="index.html"><img src="img/favicon.png" alt="Favicon" class="favicon-center" /></a>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="index.html#about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="index.html#projects" class="nav-link">Works</a></li>
+            <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+          </ul>
+          <button id="nav-btn" class="nav-btn">
+            <img src="img/icons/open.svg" alt="Menu" />
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="section title-section project-title-section">
+    <div class="container">
+      <h1 class="title">Multi-Camera Calibration and Ball Tracking for Ping-Pong Robotics</h1>
+      <div class="subtitle subtitle-tight">2025</div>
+
+      <section class="project-skill-section full-width-section">
+        <ul class="project-skill-list">
+          <li>ROS2 System Architecture</li>
+          <li>Computer Vision with YOLOv8 and OpenCV</li>
+          <li>Automated Multi-Camera Calibration</li>
+          <li>3D Reconstruction</li>
+          <li>Multi-Camera Synchronization</li>
+        </ul>
+      </section>
+
+      <div class="carousel" onmouseenter="pauseCarousel()" onmouseleave="resumeCarousel()">
+        <button class="arrow left" onclick="prevImage()" aria-label="Previous">&#10094;</button>
+        <img src="img/OnCourt/OnCourt.png" class="active" alt="Top view of enclosure" data-caption="Final Watch Assembly CAD" onclick="openFullscreen(this)" />
+        <img src="img/OnCourt/OnCourt2.png" alt="Side view" data-caption="ESP32 and MPU6050 on perfboard" onclick="openFullscreen(this)" />
+        <img src="img/OnCourt/OnCourt3.PNG" alt="Exploded view" data-caption="Euler Angles (On Wrist)" onclick="openFullscreen(this)" />
+        <img src="img/OnCourt/OnCourt4.png" alt="Wrist fit" data-caption="Final Watch Assembly Drawing" onclick="openFullscreen(this)" />
+        <div class="carousel-dots"></div>
+        <button class="arrow right" onclick="nextImage()" aria-label="Next">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section project-content alt-section">
+    <div class="container content">
+      <p><strong>Context / Problem 🔍:</strong><br>
+      Amateur tennis players often lack tools to track wrist motion, limiting performance feedback and technique improvement.
+      </p>
+
+      <p><strong>My Role 🛠️:</strong><br>
+      Conducted patent research, user interviews, and led mechanical design of a compact, wearable motion-tracking device.
+      </p>
+
+      <p><strong>Solution Summary 💡:</strong><br>
+      Developed a wrist-mounted enclosure for an ESP32 and MPU6050 IMU to measure wrist dynamics during play.
+      </p>
+
+      <p><strong>Technical Highlights 🔧:</strong></p>
+      <ul>
+        <li>Tested motion tracking using OpenPose in early prototypes.</li>
+        <li>CAD enclosure in SolidWorks to support secure sensor placement.</li>
+        <li>3D-printed two-part FDM housing for modularity and battery access.</li>
+        <li>ESP32 + IMU integration for real-time motion data collection.</li>
+      </ul>
+
+      <p><strong>Results / Key Outcomes 🏁:</strong></p>
+      <ul>
+        <li>Final design weighed under 40g and stayed secure during movement.</li>
+        <li>Successfully captured wrist orientation data for performance analysis.</li>
+      </ul>
+
+      <p><strong>Interactive 3D Model 🧊:</strong></p>
+      <model-viewer src="img/OnCourt/assemblynew.glb"
+                    alt="Wearable Enclosure 3D Model"
+                    auto-rotate
+                    camera-controls
+                    environment-image="https://modelviewer.dev/shared-assets/environments/moon_1k.hdr"
+                    exposure="0.5"
+                    shadow-intensity="0.9"
+                    camera-orbit="0deg 0deg 30%"
+                    field-of-view="20deg">
+      </model-viewer>
+    </div>
+  </section>
+
+  <section class="pdf-placeholder white-bg">
+    <div class="container">
+      <p class="report-title"><strong>Project Report</strong></p>
+
+      <div class="pdf-scroll-wrapper">
+        <!-- Controls: Stay visible in top-left of scroll section -->
+        <div class="pdf-controls-overlay">
+          <button id="zoomInBtn" onclick="zoomPDF(0.1)" title="Zoom In">➕</button>
+          <button id="zoomOutBtn" onclick="zoomPDF(-0.1)" title="Zoom Out" disabled>➖</button>
+          <button onclick="toggleFullscreen()" title="Fullscreen">⛶</button>
+        </div>
+
+        <!-- Scrollable and zoomable image container -->
+        <div class="pdf-scroll-panel">
+          <img src="files/oncourtreport/oncourt_project_page-0001.jpg" class="pdf-image" alt="Page 1" />
+          <img src="files/oncourtreport/oncourt_project_page-0002.jpg" class="pdf-image" alt="Page 2" />
+          <img src="files/oncourtreport/oncourt_project_page-0003.jpg" class="pdf-image" alt="Page 3" />
+          <img src="files/oncourtreport/oncourt_project_page-0004.jpg" class="pdf-image" alt="Page 4" />
+          <img src="files/oncourtreport/oncourt_project_page-0005.jpg" class="pdf-image" alt="Page 5" />
+          <img src="files/oncourtreport/oncourt_project_page-0006.jpg" class="pdf-image" alt="Page 6" />
+          <img src="files/oncourtreport/oncourt_project_page-0007.jpg" class="pdf-image" alt="Page 7" />
+          <img src="files/oncourtreport/oncourt_project_page-0008.jpg" class="pdf-image" alt="Page 8" />
+          <img src="files/oncourtreport/oncourt_project_page-0009.jpg" class="pdf-image" alt="Page 9" />
+          <img src="files/oncourtreport/oncourt_project_page-0010.jpg" class="pdf-image" alt="Page 10" />
+        </div>
+      </div>
+
+      <div class="pdf-buttons">
+        <a href="files/oncourt_project.pdf" target="_blank" class="btn btn-white">
+          View or Download Full PDF
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <footer class="footer custom-footer">
+    <div class="container">
+      <div class="footer-row">
+        <div class="social-links-row footer-social">
+          <a href="https://linkedin.com/in/maxtlee" target="_blank" title="LinkedIn">
+            <img src="img/social_icons/linkedin.svg" alt="LinkedIn profile" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="goToTop" class="goToTop">
+    <a href="#top"><img src="img/icons/arrow_up.svg" alt="Back to top" /></a>
+  </div>
+
+  <script>
+    document.getElementById("dynamic-logo").textContent =
+      new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+
+    const goToTop = document.getElementById("goToTop");
+    const header = document.getElementById("header");
+    window.addEventListener("scroll", () => {
+      goToTop.classList.toggle("reveal", window.scrollY > 200);
+      header.classList.toggle("header-sticky", window.scrollY > 50);
+    });
+
+    const images = document.querySelectorAll(".carousel img");
+    const dotsContainer = document.querySelector(".carousel-dots");
+    let current = 0;
+    let intervalId;
+
+    function createDots() {
+      images.forEach((_, index) => {
+        const dot = document.createElement("span");
+        dot.classList.add("dot");
+        dot.addEventListener("click", () => goToImage(index));
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateDots(index) {
+      document.querySelectorAll(".dot").forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
+    }
+
+    function showImage(index) {
+      images.forEach(img => img.classList.remove("active"));
+      images[index].classList.add("active");
+      updateDots(index);
+    }
+
+    function nextImage() {
+      current = (current + 1) % images.length;
+      showImage(current);
+    }
+
+    function prevImage() {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    }
+
+    function goToImage(index) {
+      current = index;
+      showImage(current);
+    }
+
+    function startCarousel() {
+      intervalId = setInterval(nextImage, 4000);
+    }
+
+    function pauseCarousel() {
+      clearInterval(intervalId);
+    }
+
+    function resumeCarousel() {
+      startCarousel();
+    }
+
+    function openFullscreen(img) {
+      const src = img.src;
+      const caption = img.getAttribute("data-caption") || img.alt || "Image";
+      const win = window.open("", "_blank");
+      win.document.write(`
+        <html>
+          <head>
+            <title>Fullscreen</title>
+            <style>
+              body {
+                margin: 0;
+                background: #000;
+                color: #fff;
+                font-family: sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+              }
+              img {
+                max-width: 90vw;
+                max-height: 80vh;
+              }
+              .caption {
+                margin-top: 1rem;
+                font-size: 1rem;
+                color: #ccc;
+              }
+            </style>
+          </head>
+          <body>
+            <img src="${src}" alt="${caption}" />
+            <div class="caption">${caption}</div>
+          </body>
+        </html>
+      `);
+    }
+
+    createDots();
+    showImage(current);
+    startCarousel();
+  </script>
+  <script>
+    const navBtn = document.getElementById("nav-btn");
+    const nav = document.querySelector(".nav");
+    navBtn.addEventListener("click", () => {
+      nav.classList.toggle("open");
+    });
+
+    document.querySelectorAll(".nav-link").forEach(link =>
+      link.addEventListener("click", () => {
+        nav.classList.remove("open");
+      })
+    );
+  </script>
+  <script>
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+    if (isTouchDevice) {
+      const carousel = document.querySelector('.carousel');
+      let startX = 0;
+
+      carousel.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+      });
+
+      carousel.addEventListener('touchend', e => {
+        const endX = e.changedTouches[0].clientX;
+        const diff = endX - startX;
+
+        if (Math.abs(diff) > 50) {
+          const currentImg = carousel.querySelector('.carousel img.active');
+          currentImg.classList.remove('slide-left', 'slide-right');
+
+          if (diff > 0) {
+            prevImage();
+            requestAnimationFrame(() => {
+              const newImg = carousel.querySelector('.carousel img.active');
+              newImg.classList.add('slide-right');
+            });
+          } else {
+            nextImage();
+            requestAnimationFrame(() => {
+              const newImg = carousel.querySelector('.carousel img.active');
+              newImg.classList.add('slide-left');
+            });
+          }
+
+          setTimeout(() => {
+            const allImages = carousel.querySelectorAll('img');
+            allImages.forEach(img => img.classList.remove('slide-left', 'slide-right'));
+          }, 300);
+        }
+      });
+    }
+  </script>
+  <script>
+    let currentZoom = 1;
+
+    function zoomPDF(delta) {
+      const panel = document.querySelector('.pdf-scroll-panel');
+      const zoomInBtn = document.getElementById('zoomInBtn');
+      const zoomOutBtn = document.getElementById('zoomOutBtn');
+
+      currentZoom = Math.max(1, Math.min(2.5, currentZoom + delta));
+      panel.style.transform = `scale(${currentZoom})`;
+      panel.style.transformOrigin = 'top left';
+
+      zoomInBtn.disabled = currentZoom >= 2.5;
+      zoomOutBtn.disabled = currentZoom <= 1;
+    }
+
+    function toggleFullscreen() {
+      const wrapper = document.querySelector('.pdf-scroll-wrapper');
+
+      if (/Mobi|Android/i.test(navigator.userAgent)) {
+        // Mobile fallback – open in new tab
+        window.open("files/oncourt_project.pdf", "_blank");
+        return;
+      }
+
+      if (!document.fullscreenElement) {
+        wrapper.requestFullscreen().catch(err => {
+          alert(`Error enabling fullscreen: ${err.message}`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+
+    document.addEventListener('fullscreenchange', () => {
+      if (!document.fullscreenElement) {
+        const panel = document.querySelector('.pdf-scroll-panel');
+        const zoomInBtn = document.getElementById('zoomInBtn');
+        const zoomOutBtn = document.getElementById('zoomOutBtn');
+
+        currentZoom = 1;
+        panel.style.transform = 'scale(1)';
+        zoomInBtn.disabled = false;
+        zoomOutBtn.disabled = true;
+      }
+    });
+  </script>
+
+  <script>
+    window.onload = () => {
+      window.scrollTo(0, 0);
+    };
+  </script>
+
+
+
+
+</body>
+</html>
