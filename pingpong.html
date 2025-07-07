@@ -60,10 +60,11 @@
 
       <div class="carousel" onmouseenter="pauseCarousel()" onmouseleave="resumeCarousel()">
         <button class="arrow left" onclick="prevImage()" aria-label="Previous">&#10094;</button>
-        <img src="img/PingPong/" class="active" alt="Top view of enclosure" data-caption="Final Watch Assembly CAD" onclick="openFullscreen(this)" />
-        <img src="img/PingPong/" alt="Side view" data-caption="ESP32 and MPU6050 on perfboard" onclick="openFullscreen(this)" />
-        <img src="img/PingPong/" alt="Exploded view" data-caption="Euler Angles (On Wrist)" onclick="openFullscreen(this)" />
-        <img src="img/PingPong/" alt="Wrist fit" data-caption="Final Watch Assembly Drawing" onclick="openFullscreen(this)" />
+        <img src="img/PingPong/Daheng_imaging_camera.HEIC" class="active" alt="Top view of enclosure" data-caption="Camera" onclick="openFullscreen(this)" />
+        <img src="img/PingPong/checkerboarad_identification.JPG" alt="Side view" data-caption="Checkerboard Corner Detection" onclick="openFullscreen(this)" />
+        <img src="img/PingPong/Calibration_Results.JPG" alt="Exploded view" data-caption="Calibration Result" onclick="openFullscreen(this)" />
+        <img src="img/PingPong/Vision_Pipeline_Design.png" alt="Wrist fit" data-caption="Vision Pipeline Design" onclick="openFullscreen(this)" />
+        <img src="img/PingPong/Robot Implementation.png" alt="Wrist fit" data-caption="Robot Implementation" onclick="openFullscreen(this)" />
         <div class="carousel-dots"></div>
         <button class="arrow right" onclick="nextImage()" aria-label="Next">&#10095;</button>
       </div>
@@ -103,54 +104,40 @@
 
 
       <p><strong>Demo Videos 📽️:</strong></p>
+<p><strong>Demo Videos 📽️:</strong></p>
       <ul>
-        <li><a href="https://docs.google.com/file/d/1NtHOWJpWIBkXcNTJRV3n4ZU04ANPFxlR/preview" target="_blank">Robot in action</a></li>
-        <li><a href="https://docs.google.com/file/d/1cda9MXKq7-EVhSmlyryc3uU1eWJiDlNO/preview" target="_blank">Ball tracking in simulation</a></li>
-        <li><a href="https://docs.google.com/file/d/1gdUOnL4pLolo-8rRthb6nSsW6zre-MA-/preview" target="_blank">RL-based pose tracker</a></li>
-        <li><a href="https://docs.google.com/file/d/1tR_5qJihvOiYpD8qqEKO5asvh03Y3HpB/preview" target="_blank">Target pose logic</a></li>
+        <li>
+          <p><strong>Robot in Action</strong></p>
+          <video controls width="100%">
+            <source src="img/PingPong/Kuka_arminaction.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </li>
+        <li>
+          <p><strong>Ball Tracking in Action with 4 cameras</strong></p>
+          <video controls width="100%">
+            <source src="img/PingPong/4_camera_ball_detection.MOV" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </li>
+        <li>
+          <p><strong>Single Camera Ball Tracking</strong></p>
+          <video controls width="100%">
+            <source src="img/PingPong/Single_Ball_Detection.MOV" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </li>
+        <li>
+          <p><strong>Target Pose Logic</strong></p>
+          <video controls width="100%">
+            <source src="img/PingPong/target_pose_logic.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </li>
       </ul>
+
     </div>
   </section>
-
-
-  <section class="pdf-placeholder white-bg">
-    <div class="container">
-      <p class="report-title"><strong>Project Report</strong></p>
-
-      <div class="pdf-scroll-wrapper">
-        <!-- Controls: Stay visible in top-left of scroll section -->
-        <div class="pdf-controls-overlay">
-          <button id="zoomInBtn" onclick="zoomPDF(0.1)" title="Zoom In">➕</button>
-          <button id="zoomOutBtn" onclick="zoomPDF(-0.1)" title="Zoom Out" disabled>➖</button>
-          <button onclick="toggleFullscreen()" title="Fullscreen">⛶</button>
-        </div>
-
-        <!-- Scrollable and zoomable image container -->
-        <div class="pdf-scroll-panel">
-          <img src="files/oncourtreport/oncourt_project_page-0001.jpg" class="pdf-image" alt="Page 1" />
-          <img src="files/oncourtreport/oncourt_project_page-0002.jpg" class="pdf-image" alt="Page 2" />
-          <img src="files/oncourtreport/oncourt_project_page-0003.jpg" class="pdf-image" alt="Page 3" />
-          <img src="files/oncourtreport/oncourt_project_page-0004.jpg" class="pdf-image" alt="Page 4" />
-          <img src="files/oncourtreport/oncourt_project_page-0005.jpg" class="pdf-image" alt="Page 5" />
-          <img src="files/oncourtreport/oncourt_project_page-0006.jpg" class="pdf-image" alt="Page 6" />
-          <img src="files/oncourtreport/oncourt_project_page-0007.jpg" class="pdf-image" alt="Page 7" />
-          <img src="files/oncourtreport/oncourt_project_page-0008.jpg" class="pdf-image" alt="Page 8" />
-          <img src="files/oncourtreport/oncourt_project_page-0009.jpg" class="pdf-image" alt="Page 9" />
-          <img src="files/oncourtreport/oncourt_project_page-0010.jpg" class="pdf-image" alt="Page 10" />
-        </div>
-      </div>
-
-      <div class="pdf-buttons">
-        <a href="files/oncourt_project.pdf" target="_blank" class="btn btn-white">
-          View or Download Full PDF
-        </a>
-      </div>
-    </div>
-  </section>
-
-
-
-
 
   <footer class="footer custom-footer">
     <div class="container">
