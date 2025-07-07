@@ -60,10 +60,10 @@
 
       <div class="carousel" onmouseenter="pauseCarousel()" onmouseleave="resumeCarousel()">
         <button class="arrow left" onclick="prevImage()" aria-label="Previous">&#10094;</button>
-        <img src="img/OnCourt/OnCourt.png" class="active" alt="Top view of enclosure" data-caption="Final Watch Assembly CAD" onclick="openFullscreen(this)" />
-        <img src="img/OnCourt/OnCourt2.png" alt="Side view" data-caption="ESP32 and MPU6050 on perfboard" onclick="openFullscreen(this)" />
-        <img src="img/OnCourt/OnCourt3.PNG" alt="Exploded view" data-caption="Euler Angles (On Wrist)" onclick="openFullscreen(this)" />
-        <img src="img/OnCourt/OnCourt4.png" alt="Wrist fit" data-caption="Final Watch Assembly Drawing" onclick="openFullscreen(this)" />
+        <img src="img/PingPong/" class="active" alt="Top view of enclosure" data-caption="Final Watch Assembly CAD" onclick="openFullscreen(this)" />
+        <img src="img/PingPong/" alt="Side view" data-caption="ESP32 and MPU6050 on perfboard" onclick="openFullscreen(this)" />
+        <img src="img/PingPong/" alt="Exploded view" data-caption="Euler Angles (On Wrist)" onclick="openFullscreen(this)" />
+        <img src="img/PingPong/" alt="Wrist fit" data-caption="Final Watch Assembly Drawing" onclick="openFullscreen(this)" />
         <div class="carousel-dots"></div>
         <button class="arrow right" onclick="nextImage()" aria-label="Next">&#10095;</button>
       </div>
@@ -73,44 +73,45 @@
   <section class="section project-content alt-section">
     <div class="container content">
       <p><strong>Context / Problem 🔍:</strong><br>
-      Amateur tennis players often lack tools to track wrist motion, limiting performance feedback and technique improvement.
+        Real-time ping pong-playing robots face challenges in integrating vision, control, and robotics to respond accurately to a fast-moving ball.
       </p>
 
       <p><strong>My Role 🛠️:</strong><br>
-      Conducted patent research, user interviews, and led mechanical design of a compact, wearable motion-tracking device.
+        Developed and streamlined the full vision pipeline: performed multi-camera calibration, 
+        implemented YOLOv8-based ball detection and 3D triangulation, and contributed to ROS-based communication between vision and control systems.
       </p>
 
+
       <p><strong>Solution Summary 💡:</strong><br>
-      Developed a wrist-mounted enclosure for an ESP32 and MPU6050 IMU to measure wrist dynamics during play.
+        Built a real-time ping pong system that detects the ball using four overhead cameras, triangulates 3D position, predicts trajectory, 
+        and commands a robot arm to intercept or return the ball via reinforcement learning-based pose tracking.
       </p>
 
       <p><strong>Technical Highlights 🔧:</strong></p>
       <ul>
-        <li>Tested motion tracking using OpenPose in early prototypes.</li>
-        <li>CAD enclosure in SolidWorks to support secure sensor placement.</li>
-        <li>3D-printed two-part FDM housing for modularity and battery access.</li>
-        <li>ESP32 + IMU integration for real-time motion data collection.</li>
+        <li>Automated checkerboard calibration for 4-camera setup, with stereo reprojection error analysis.</li>
+        <li>Used YOLOv8 with public dataset (Roboflow) for accurate ball detection.</li>
+        <li>Triangulated ball location using synchronized camera feeds, projection matrices, and camera intrinsic and extrinsic properties.</li>
+        <li>Built ROS2-ROS1 bridge for real-time communication between vision system and robotic controller.</li>
       </ul>
 
       <p><strong>Results / Key Outcomes 🏁:</strong></p>
       <ul>
-        <li>Final design weighed under 40g and stayed secure during movement.</li>
-        <li>Successfully captured wrist orientation data for performance analysis.</li>
+        <li>Achieved successful 3D reconstruction from four overhead cameras through precise calibration and triangulation.</li>
+        <li>Enabled accurate real-time 3D tracking of a ping pong ball rolling across the table surface.</li>
       </ul>
 
-      <p><strong>Interactive 3D Model 🧊:</strong></p>
-      <model-viewer src="img/OnCourt/assemblynew.glb"
-                    alt="Wearable Enclosure 3D Model"
-                    auto-rotate
-                    camera-controls
-                    environment-image="https://modelviewer.dev/shared-assets/environments/moon_1k.hdr"
-                    exposure="0.5"
-                    shadow-intensity="0.9"
-                    camera-orbit="0deg 0deg 30%"
-                    field-of-view="20deg">
-      </model-viewer>
+
+      <p><strong>Demo Videos 📽️:</strong></p>
+      <ul>
+        <li><a href="https://docs.google.com/file/d/1NtHOWJpWIBkXcNTJRV3n4ZU04ANPFxlR/preview" target="_blank">Robot in action</a></li>
+        <li><a href="https://docs.google.com/file/d/1cda9MXKq7-EVhSmlyryc3uU1eWJiDlNO/preview" target="_blank">Ball tracking in simulation</a></li>
+        <li><a href="https://docs.google.com/file/d/1gdUOnL4pLolo-8rRthb6nSsW6zre-MA-/preview" target="_blank">RL-based pose tracker</a></li>
+        <li><a href="https://docs.google.com/file/d/1tR_5qJihvOiYpD8qqEKO5asvh03Y3HpB/preview" target="_blank">Target pose logic</a></li>
+      </ul>
     </div>
   </section>
+
 
   <section class="pdf-placeholder white-bg">
     <div class="container">
