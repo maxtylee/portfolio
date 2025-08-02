@@ -93,6 +93,7 @@
         <li>Automated checkerboard calibration for 4-camera setup, with stereo reprojection error analysis.</li>
         <li>Used YOLOv8 with public dataset (Roboflow) for accurate ball detection.</li>
         <li>Triangulated ball location using synchronized camera feeds, projection matrices, and camera intrinsic and extrinsic properties.</li>
+        <li>Applied Direct Linear Transform (DLT) with Singular Value Decomposition (SVD) for multi-camera triangulation across a 4-camera setup</li>
         <li>Built ROS2-ROS1 bridge for real-time communication between vision system and robotic controller.</li>
       </ul>
 
@@ -255,6 +256,7 @@
           </body>
         </html>
       `);
+      win.document.close();
     }
 
     createDots();
