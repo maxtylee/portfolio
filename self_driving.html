@@ -71,45 +71,65 @@
     </div>
   </section>
 
-  <section class="section project-content alt-section">
-    <div class="container content">
+<section class="section project-content alt-section">
+  <div class="container content">
       <p><strong>Context / Problem 🔍:</strong><br>
-        Educating children in STEM—specifically in soft robotics and logic circuits—typically relies on electronics, which may be less tactile and more complex for young learners. 
-        Neublox aims to introduce 7–12 year olds to computational logic and actuation through safe, hands-on pneumatic circuits.
+            In traditional vehicles, the driver can monitor battery levels and decide when to recharge.  
+            But in a self-driving car, there is no driver to check the battery level.  
+            Our Robo-Cybertruck project addressed this challenge by detecting low battery voltage and autonomously navigating to a designated “charging station” using GPS and Google Maps API.
       </p>
 
       <p><strong>My Role 🛠️:</strong><br>
-        Designed and fabricated core pneumatic components including push-to-break buttons, resistor blocks, and soft robotic grippers. 
-        Prototyped and iterated through multiple manufacturing methods, including silicone molding and acrylic lamination. Contributed to system integration and kit assembly for user testing and demonstration.
+            Integrated hardware and software for autonomous navigation, including Arduino-based voltage sensing, Jetson Nano processing, and GPS localization. 
+            Developed Python scripts to connect battery monitoring with DonkeyCar navigation, implemented Google Maps API for route generation, and tested path-following accuracy through iterative PID tuning.
       </p>
 
       <p><strong>Solution Summary 💡:</strong><br>
-        Built a modular, electronics-free educational kit that uses air pressure to demonstrate logic gates (NOT, AND, OR, etc.) and actuates robotic mechanisms. 
-        The system enables kids to assemble pneumatic circuits that mimic electronic logic and control soft robotic actuators using air instead of electricity.
+        Built a resin-printed Cybertruck-themed autonomous vehicle capable of monitoring its own battery levels, detecting low voltage, and navigating to a predefined charging station. 
+        The system combined real-time sensor feedback, Google Maps API path planning, and DonkeyCar control for end-to-end autonomy.
       </p>
 
       <p><strong>Technical Highlights 🔧:</strong></p>
       <ul>
-        <li>Manufactured push-to-break buttons using silicone molding and 3D-printed molds, tested to operate reliably at 10 psi.</li>
-        <li>Engineered pneumatic resistors with tunable airflow and calculated pressure drop using fluid dynamics equations.</li>
-        <li>Used SolidWorks to design logic gate blocks, grippers, and connector geometries for manufacturability and child safety.</li>
-        <li>Prototyped and validated pneumatic NOT, AND, OR, NAND, and NOR gates through iterative testing and performance analysis.</li>
-        <li>Wrote educational content and example pneumatic circuits demonstrating logic gate behavior for children; developed manufacturing guidelines for scalable production.</li>
+        <li>Implemented Arduino Nano + voltage divider circuit for continuous battery health monitoring with LCD and buzzer feedback.</li>
+        <li>Integrated GPS navigation and converted latitude/longitude to UTM coordinates for precise motion tracking.</li>
+        <li>Used Google Maps API for automatic route generation to the charging station based on current location.</li>
+        <li>Applied PID control tuning and hardware mounting to improve navigation and perception accuracy.</li>
       </ul>
 
       <p><strong>Results / Key Outcomes 🏁:</strong></p>
       <ul>
-        <li>Delivered a fully functional educational pneumatic circuit kit to Neubo Inc. with interactive components and assembly instructions.</li>
-        <li>Successfully demonstrated real pneumatic logic circuits and actuator control to simulate electronic behaviors in an age-appropriate format.</li>
-        <li>Reduced leakage and improved performance through pressure testing, redesign, and iterative prototyping.</li>
+        <li>Autonomously navigated to a charging station with ±1.5 m accuracy once low voltage was detected.</li>
+        <li>Validated end-to-end integration of voltage sensing, GPS navigation, and DonkeyCar control through real-world testing.</li>
+        <li>Delivered a functional system combining hardware prototyping, embedded programming, and software integration.</li>
       </ul>
-
-
-
-
 
       <p><strong>Demo Videos 📽️:</strong></p>
       <ul>
+        <li>
+          <p><strong>Low Battery Detection & Navigation</strong></p>
+          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+            <iframe 
+              src="https://www.youtube.com/embed/v8_oquj03eM" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen 
+              style="position: absolute; top:0; left:0; width:100%; height:100%;">
+            </iframe>
+          </div>
+        </li>
+        <li>
+          <p><strong>Autonomous Navigation to Charging Station</strong></p>
+          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+            <iframe 
+              src="https://www.youtube.com/embed/lQUTk7YuOIY" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen 
+              style="position: absolute; top:0; left:0; width:100%; height:100%;">
+            </iframe>
+          </div>
+        </li>
         <li>
           <p><strong>Project Presentation (Demo Day)</strong></p>
           <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
@@ -121,8 +141,11 @@
               style="position: absolute; top:0; left:0; width:100%; height:100%;">
             </iframe>
           </div>
-    </div>
-  </section>
+        </li>
+      </ul>
+  </div>
+</section>
+
 
   <footer class="footer custom-footer">
     <div class="container">
