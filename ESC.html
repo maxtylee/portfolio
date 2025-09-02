@@ -53,7 +53,7 @@
     <p style="margin: -3.5rem 0 1rem 0; text-align: center;">
       <a href="#" target="_blank"
          style="font-size: 1rem; font-weight: 500; color: #000; text-decoration: none;">
-        🔗 Paper/Code (coming soon)
+        🔗 https://arxiv.org/pdf/2403.16294
       </a>
     </p>
 
@@ -87,34 +87,36 @@
       Extremum Source Seeking Control Lab — Undergraduate Research Assistant under Prof. Miroslav Krstić & Prof. Mamadou Diagne (UC San Diego)</p>
 
     <p><strong>Overview 🔍:</strong><br>
-      To validate control theory, we built a physical experiment comparing a PhD student’s
+      To validate control theory, we built a physical experiment comparing a PhD student’s (Cemal Tugrul Yilmaz)
       <em>Unbiased Extremum Seeking Control (uESC)</em> with classical ESC on a TurtleBot3 Burger.
       Using ROS 2, we implemented both controllers and logged motion using OpenCV-based tracking.
       Hardware limits (wheel dynamics, sensor noise) produced less-smooth paths than ideal, but convergence behavior could be clearly contrasted.</p>
 
     <p><strong>My Role 🛠️:</strong><br>
-      Assembled and integrated the TurtleBot3 platform; implemented ROS 2 nodes for the control loop and data logging;
-      created an OpenCV pipeline to track robot position and plot trajectories; packaged runs for side-by-side analysis
-      against MATLAB simulations from the theory team.</p>
+      Assembled and integrated the TurtleBot3 platform; implemented ROS 2 nodes for the feedback control loop and data logging;
+      created an OpenCV pipeline to track robot position and plot trajectories through video feedback.</p>
 
     <p><strong>Solution Summary 💡:</strong><br>
-      We set up a 2-D “source field” (unknown optimum) and drove the robot with either uESC (bias-free gradient estimation)
-      or classical ESC (demodulation-based). The ROS 2 stack published wheel commands and logged pose estimates;
-      a calibrated overhead camera tracked motion in OpenCV to produce quantitative trajectory plots for comparison.</p>
+      Built a proof-of-concept on TurtleBot3 applying unbiased extremum seeking control (uESC) versus classical ESC. 
+      ROS 2 nodes (Python) generated wheel commands from sensor inputs, while OpenCV motion tracking quantified trajectories with ~90% accuracy.</p>
+
+
 
     <p><strong>Technical Highlights 🔧:</strong></p>
     <ul>
-      <li>Built ROS 2 nodes for command, sensing, and run management (bagging + CSV export).</li>
-      <li>OpenCV tracker + camera calibration to convert pixels → world coordinates for trajectory plots.</li>
-      <li>uESC vs classical ESC: identical test conditions (initial pose, step size, dithers) for apples-to-apples comparison.</li>
-      <li>Post-processing in Python/NumPy/Matplotlib to compute path length, time-to-ε-neighborhood, and steady-state error.</li>
+      <li>Built ROS 2 nodes for command, sensing.</li>
+      <li>OpenCV tracker via experiencial video footage</li>
+      <li>uESC vs classical ESC: identical test conditions (initial pose, step size, parameters) for comparison.</li>
+      <li></li>
     </ul>
 
     <p><strong>Results / Key Outcomes 🏁:</strong></p>
     <ul>
-      <li>Observed <em>direct convergence tendencies</em> with uESC versus <em>orbiting behavior</em> with classical ESC near the source.</li>
+      <li>Observed direct convergence tendencies with uESC versus orbiting behavior with classical ESC near the source.</li>
       <li>Generated reproducible plots from real runs to validate MATLAB predictions and parameter sensitivities.</li>
       <li>Documented hardware limitations (latency, backlash, friction) that impact theoretical smoothness.</li>
+      <li>The OpenCV pipeline tracked the TurtleBot’s pose frame-by-frame and rendered the path for both controllers.
+      These plots enabled quantitative comparison against simulation outputs and clarified when/why classical ESC circles the optimum.</li>
     </ul>
 
     <p><strong>Trajectory Tracking (OpenCV) 🧭:</strong><br>
