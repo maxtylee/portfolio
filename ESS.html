@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1200, user-scalable=yes" />
+  <title>Autonomous Vehicle – Max Lee</title>
+  <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/media.css" />
+  <link rel="stylesheet" href="css/project.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYWLDHBKVK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYWLDHBKVK');
+  </script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<script>
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
+</script>
+<body>
+  <header id="header" class="header">
+    <div class="container container-lg">
+      <div class="header-nav">
+        <a href="index.html#home" class="logo" id="dynamic-logo">Loading date...</a>
+        <a href="index.html"><img src="img/favicon.png" alt="Favicon" class="favicon-center" /></a>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="index.html#about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="index.html#projects" class="nav-link">Works</a></li>
+            <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+          </ul>
+          <button id="nav-btn" class="nav-btn">
+            <img src="img/icons/open.svg" alt="Menu" />
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+<!-- ===== Project Title / Hero ===== -->
+<section class="section title-section project-title-section">
+  <div class="container">
+    <h1 class="title">Unbiased Extremum Seeking on TurtleBot3 (ROS 2)</h1>
+
+    <!-- Optional GitHub/Doc Link -->
+    <!-- Replace href if you have a repo or paper link; otherwise keep or remove -->
+    <p style="margin: -3.5rem 0 1rem 0; text-align: center;">
+      <a href="#" target="_blank"
+         style="font-size: 1rem; font-weight: 500; color: #000; text-decoration: none;">
+        🔗 Paper/Code (coming soon)
+      </a>
+    </p>
+
+    <div class="subtitle subtitle-tight">Sep 2023 – Jun 2024</div>
+
+    <!-- Skills -->
+    <section class="project-skill-section full-width-section">
+      <ul class="project-skill-list">
+        <li>ROS 2 (rclpy, topics, nodes)</li>
+        <li>OpenCV Trajectory Tracking</li>
+        <li>Sensor Integration & TurtleBot3 Assembly</li>
+        <li>Unbiased Extremum Seeking Control (uESC) vs. Classical ESC</li>
+        <li>Python Tooling for Experimentation</li>
+      </ul>
+    </section>
+
+    <!-- Keep a tiny carousel so your existing JS doesn't error out -->
+    <div class="carousel" onmouseenter="pauseCarousel()" onmouseleave="resumeCarousel()">
+      <button class="arrow left" onclick="prevImage()" aria-label="Previous">&#10094;</button>
+      <img src="img/ues/tb3.jpg" alt="TurtleBot3 uESC Experiment" data-caption="TurtleBot3 uESC Experiment" class="active" onclick="openFullscreen(this)" />
+      <div class="carousel-dots"></div>
+      <button class="arrow right" onclick="nextImage()" aria-label="Next">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Project Body ===== -->
+<section class="section project-content alt-section">
+  <div class="container content">
+    <p><strong>Affiliation 🧪:</strong><br>
+      Extremum Seeking Research Lab — Undergraduate Research Assistant under Prof. Miroslav Krstić (UC San Diego)</p>
+
+    <p><strong>Overview 🔍:</strong><br>
+      To validate control theory, we built a physical experiment comparing a PhD student’s
+      <em>Unbiased Extremum Seeking Control (uESC)</em> with classical ESC on a TurtleBot3 Burger.
+      Using ROS 2, we implemented both controllers and logged motion using OpenCV-based tracking.
+      Hardware limits (wheel dynamics, sensor noise) produced less-smooth paths than ideal, but convergence behavior could be clearly contrasted.</p>
+
+    <p><strong>My Role 🛠️:</strong><br>
+      Assembled and integrated the TurtleBot3 platform; implemented ROS 2 nodes for the control loop and data logging;
+      created an OpenCV pipeline to track robot position and plot trajectories; packaged runs for side-by-side analysis
+      against MATLAB simulations from the theory team.</p>
+
+    <p><strong>Solution Summary 💡:</strong><br>
+      We set up a 2-D “source field” (unknown optimum) and drove the robot with either uESC (bias-free gradient estimation)
+      or classical ESC (demodulation-based). The ROS 2 stack published wheel commands and logged pose estimates;
+      a calibrated overhead camera tracked motion in OpenCV to produce quantitative trajectory plots for comparison.</p>
+
+    <p><strong>Technical Highlights 🔧:</strong></p>
+    <ul>
+      <li>Built ROS 2 nodes for command, sensing, and run management (bagging + CSV export).</li>
+      <li>OpenCV tracker + camera calibration to convert pixels → world coordinates for trajectory plots.</li>
+      <li>uESC vs classical ESC: identical test conditions (initial pose, step size, dithers) for apples-to-apples comparison.</li>
+      <li>Post-processing in Python/NumPy/Matplotlib to compute path length, time-to-ε-neighborhood, and steady-state error.</li>
+    </ul>
+
+    <p><strong>Results / Key Outcomes 🏁:</strong></p>
+    <ul>
+      <li>Observed <em>direct convergence tendencies</em> with uESC versus <em>orbiting behavior</em> with classical ESC near the source.</li>
+      <li>Generated reproducible plots from real runs to validate MATLAB predictions and parameter sensitivities.</li>
+      <li>Documented hardware limitations (latency, backlash, friction) that impact theoretical smoothness.</li>
+    </ul>
+
+    <p><strong>Trajectory Tracking (OpenCV) 🧭:</strong><br>
+      The OpenCV pipeline tracked the TurtleBot’s pose frame-by-frame and rendered the path for both controllers.
+      These plots enabled quantitative comparison against simulation outputs and clarified when/why classical ESC circles the optimum.</p>
+
+    <p><strong>Demo Videos 📽️:</strong></p>
+    <ul>
+      <li>
+        <p><strong>Unbiased Extremum Seeking (uESC)</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+          <!-- Replace VIDEO_ID_UESC with your actual YouTube ID -->
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID_UESC"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            style="position: absolute; top:0; left:0; width:100%; height:100%;">
+          </iframe>
+        </div>
+        <p class="caption" style="color:#666; margin-top:0.5rem;">
+          Shows significant convergence toward the source; minor path roughness attributed to TurtleBot hardware limits.
+        </p>
+      </li>
+
+      <li>
+        <p><strong>Classical Extremum Seeking (ESC)</strong></p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+          <!-- Replace VIDEO_ID_ESC with your actual YouTube ID -->
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID_ESC"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            style="position: absolute; top:0; left:0; width:100%; height:100%;">
+          </iframe>
+        </div>
+        <p class="caption" style="color:#666; margin-top:0.5rem;">
+          Illustrates characteristic orbiting near the source instead of direct convergence.
+        </p>
+      </li>
+    </ul>
+
+    <!-- Optional: Interactive 3D model area (keep if you’ll add a model; otherwise remove) -->
+    <!--
+    <p><strong>Interactive 3D Model 🧊:</strong></p>
+    <model-viewer src="img/ues/tb3_setup.glb"
+                  alt="uESC Experiment Setup 3D"
+                  auto-rotate
+                  camera-controls
+                  environment-image="https://modelviewer.dev/shared-assets/environments/moon_1k.hdr"
+                  exposure="0.5"
+                  shadow-intensity="0.9"
+                  camera-orbit="0deg 0deg 30%"
+                  field-of-view="20deg">
+    </model-viewer>
+    -->
+  </div>
+</section>
+
+
+
+  <footer class="footer custom-footer">
+    <div class="container">
+      <div class="footer-row">
+        <div class="social-links-row footer-social">
+          <a href="https://linkedin.com/in/maxtlee" target="_blank" title="LinkedIn">
+            <img src="img/social_icons/linkedin.svg" alt="LinkedIn profile" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="goToTop" class="goToTop">
+    <a href="#top"><img src="img/icons/arrow_up.svg" alt="Back to top" /></a>
+  </div>
+
+  <script>
+    document.getElementById("dynamic-logo").textContent =
+      new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+
+    const goToTop = document.getElementById("goToTop");
+    const header = document.getElementById("header");
+    window.addEventListener("scroll", () => {
+      goToTop.classList.toggle("reveal", window.scrollY > 200);
+      header.classList.toggle("header-sticky", window.scrollY > 50);
+    });
+
+    const images = document.querySelectorAll(".carousel img");
+    const dotsContainer = document.querySelector(".carousel-dots");
+    let current = 0;
+    let intervalId;
+
+    function createDots() {
+      images.forEach((_, index) => {
+        const dot = document.createElement("span");
+        dot.classList.add("dot");
+        dot.addEventListener("click", () => goToImage(index));
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateDots(index) {
+      document.querySelectorAll(".dot").forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
+    }
+
+    function showImage(index) {
+      images.forEach(img => img.classList.remove("active"));
+      images[index].classList.add("active");
+      updateDots(index);
+    }
+
+    function nextImage() {
+      current = (current + 1) % images.length;
+      showImage(current);
+    }
+
+    function prevImage() {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    }
+
+    function goToImage(index) {
+      current = index;
+      showImage(current);
+    }
+
+    function startCarousel() {
+      intervalId = setInterval(nextImage, 4000);
+    }
+
+    function pauseCarousel() {
+      clearInterval(intervalId);
+    }
+
+    function resumeCarousel() {
+      startCarousel();
+    }
+
+    function openFullscreen(img) {
+      const src = img.src;
+      const caption = img.getAttribute("data-caption") || img.alt || "Image";
+      const win = window.open("", "_blank");
+      win.document.write(`
+        <html>
+          <head>
+            <title>Fullscreen</title>
+            <style>
+              body {
+                margin: 0;
+                background: #000;
+                color: #fff;
+                font-family: sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+              }
+              img {
+                max-width: 90vw;
+                max-height: 80vh;
+              }
+              .caption {
+                margin-top: 1rem;
+                font-size: 1rem;
+                color: #ccc;
+              }
+            </style>
+          </head>
+          <body>
+            <img src="${src}" alt="${caption}" />
+            <div class="caption">${caption}</div>
+          </body>
+        </html>
+      `);
+      win.document.close();
+    }
+
+    createDots();
+    showImage(current);
+    startCarousel();
+  </script>
+  <script>
+    const navBtn = document.getElementById("nav-btn");
+    const nav = document.querySelector(".nav");
+    navBtn.addEventListener("click", () => {
+      nav.classList.toggle("open");
+    });
+
+    document.querySelectorAll(".nav-link").forEach(link =>
+      link.addEventListener("click", () => {
+        nav.classList.remove("open");
+      })
+    );
+  </script>
+  <script>
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+    if (isTouchDevice) {
+      const carousel = document.querySelector('.carousel');
+      let startX = 0;
+
+      carousel.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+      });
+
+      carousel.addEventListener('touchend', e => {
+        const endX = e.changedTouches[0].clientX;
+        const diff = endX - startX;
+
+        if (Math.abs(diff) > 50) {
+          const currentImg = carousel.querySelector('.carousel img.active');
+          currentImg.classList.remove('slide-left', 'slide-right');
+
+          if (diff > 0) {
+            prevImage();
+            requestAnimationFrame(() => {
+              const newImg = carousel.querySelector('.carousel img.active');
+              newImg.classList.add('slide-right');
+            });
+          } else {
+            nextImage();
+            requestAnimationFrame(() => {
+              const newImg = carousel.querySelector('.carousel img.active');
+              newImg.classList.add('slide-left');
+            });
+          }
+
+          setTimeout(() => {
+            const allImages = carousel.querySelectorAll('img');
+            allImages.forEach(img => img.classList.remove('slide-left', 'slide-right'));
+          }, 300);
+        }
+      });
+    }
+  </script>
+  <script>
+    let currentZoom = 1;
+
+    function zoomPDF(delta) {
+      const panel = document.querySelector('.pdf-scroll-panel');
+      const zoomInBtn = document.getElementById('zoomInBtn');
+      const zoomOutBtn = document.getElementById('zoomOutBtn');
+
+      currentZoom = Math.max(1, Math.min(2.5, currentZoom + delta));
+      panel.style.transform = `scale(${currentZoom})`;
+      panel.style.transformOrigin = 'top left';
+
+      zoomInBtn.disabled = currentZoom >= 2.5;
+      zoomOutBtn.disabled = currentZoom <= 1;
+    }
+
+    function toggleFullscreen() {
+      const wrapper = document.querySelector('.pdf-scroll-wrapper');
+
+      if (/Mobi|Android/i.test(navigator.userAgent)) {
+        // Mobile fallback – open in new tab
+        window.open("files/oncourt_project.pdf", "_blank");
+        return;
+      }
+
+      if (!document.fullscreenElement) {
+        wrapper.requestFullscreen().catch(err => {
+          alert(`Error enabling fullscreen: ${err.message}`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+
+    document.addEventListener('fullscreenchange', () => {
+      if (!document.fullscreenElement) {
+        const panel = document.querySelector('.pdf-scroll-panel');
+        const zoomInBtn = document.getElementById('zoomInBtn');
+        const zoomOutBtn = document.getElementById('zoomOutBtn');
+
+        currentZoom = 1;
+        panel.style.transform = 'scale(1)';
+        zoomInBtn.disabled = false;
+        zoomOutBtn.disabled = true;
+      }
+    });
+  </script>
+
+  <script>
+    window.onload = () => {
+      window.scrollTo(0, 0);
+    };
+  </script>
+
+
+
+
+</body>
+</html>
