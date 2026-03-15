@@ -745,7 +745,7 @@ h5 {
 .project-poster {
   display: flex;
   justify-content: center;
-  margin: 0.5rem 0 1rem;
+  margin: 0.5rem 0 0.5rem;
 }
 
 .project-poster img {
