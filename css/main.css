@@ -746,13 +746,14 @@ h5 {
   display: flex;
   justify-content: center;
   margin: 1.5rem 0 2rem;
+  padding: 0;
+  height: auto;
+  min-height: 0;
 }
 
 .project-poster img {
+  display: block;
   width: 100%;
   max-width: 900px;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  cursor: pointer;
 }
