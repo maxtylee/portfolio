@@ -75,33 +75,38 @@
 <section class="section project-content alt-section">
   <div class="container content">
     <p><strong>Context / Problem 🔍:</strong><br>
-      Wildfire mitigation often relies on creating firebreaks, but conventional methods are labor-intensive and difficult to perform safely at scale. BurnBot is developing a semi-autonomous robotic system to automate this process, but its onboard torches are vulnerable to hard obstacles such as rocks, stumps, and dense shrubbery. Our challenge was to design an obstacle detection system that could identify the height of damaging obstacles in real time while ignoring softer vegetation like grass that the torches can safely pass through.
+      Wildfire mitigation often relies on creating firebreaks, but conventional methods are labor-intensive and difficult to perform safely at scale. 
+      BurnBot is developing a semi-autonomous robotic system to automate this process, but its onboard torches are vulnerable to hard obstacles such 
+      as rocks, stumps, and dense shrubbery. Our challenge was to design an obstacle detection system that could identify the height of damaging obstacles 
+      in real time and raise the torches while ignoring softer vegetation like grass that the torches can safely pass through.
     </p>
 
     <p><strong>My Role 🛠️:</strong><br>
-      Contributed to the design, prototyping, and validation of a mechanical obstacle detection system for BurnBot. Worked on blade-array mechanism development, material and thickness selection, shaft and mounting design, sensor integration, and iterative prototype refinement. Also supported system-level testing and development of a final-intent integration concept for mounting the mechanism onto BurnBot.
+      I Contributed to the design, prototyping, and validation of a mechanical obstacle detection system for BurnBot. Worked on blade-array mechanism 
+      development, material and thickness selection, iterative prototype refinement, and development of a final-intent integration concept for mounting the mechanism onto BurnBot. 
     </p>
 
     <p><strong>Solution Summary 💡:</strong><br>
-      Developed a contact-based mechanical sensing system that uses spring steel blades mounted to a rotating shaft with an encoder to measure obstacle height. When the blades contact a rigid obstacle, shaft rotation is measured and converted into height using a trigonometric model. Torsion springs provide adjustable resistance so the system can distinguish destructive obstacles from flexible brush, enabling BurnBot to raise its torches only when necessary.
+      Developed a contact-based mechanical sensing system that uses spring steel blades mounted to a rotating shaft with an encoder to measure obstacle height. 
+      When the blades contact a rigid obstacle, shaft rotation is measured and converted into height using a trigonometric model. 
+      Torsion springs provide adjustable resistance so the system can distinguish destructive obstacles from flexible brush, enabling BurnBot to raise its torches only when necessary.
     </p>
 
     <p><strong>Technical Highlights 🔧:</strong></p>
     <ul>
-      <li>Designed a blade-array sensing mechanism that estimates obstacle height from encoder-measured shaft rotation using a kinematic/trigonometric model.</li>
-      <li>Evaluated multiple sensing approaches—including visual sensing, strain gauges, flex sensors, potentiometers, and encoders—and selected a mechanical contact-based solution for better robustness to occlusion, vibration, and brush interference.</li>
+      <li>Designed a blade-array sensing mechanism that estimates obstacle height from encoder-measured shaft rotation using a trigonometric model.</li>
+      <li>Evaluated multiple sensing approaches—including visual sensing, flex sensors, potentiometers, and encoders—and selected a mechanical contact-based solution for greater robustness to occlusion, vibration, and interference from bushes.</li>
       <li>Tested spring steel, stainless steel, and polycarbonate blade materials, selecting 0.042" spring steel for its ability to flex laterally without permanent deformation.</li>
-      <li>Improved blade reliability by refining geometry, including rounded corners to reduce snagging on logs and rough obstacles.</li>
-      <li>Integrated torsion springs and experimentally compared torque values, selecting dual 27 in-lb springs to improve obstacle tracking accuracy and reduce blade bounce.</li>
       <li>Built and iterated a partial-scale prototype using an 80/20 aluminum frame, modular blade fixtures, a rotary encoder, Arduino-based readout, and mock torch actuation.</li>
-      <li>Designed for serviceability and low-volume manufacturability by making blades and fixtures easy to replace without disassembling the full mechanism.</li>
+      <li>Designed for assembly by making the blades easy to replace from the shaft without disassembling the full mechanism when damaged.</li>
+      <li>Designed for manufacturing by creating blades with simple 2D geometry that could be manufactured through waterjet cutting.</li>
     </ul>
 
     <p><strong>Results / Key Outcomes 🏁:</strong></p>
     <ul>
-      <li>Delivered a proof-of-concept mechanical obstacle detection prototype capable of measuring incoming obstacle height and transmitting that information electronically.</li>
+      <li>Delivered a proof-of-concept mechanical obstacle detection prototype capable of measuring incoming obstacle height, and raising the torches when needed.</li>
       <li>Validated key design choices through iterative testing of blade material, blade thickness, sensor type, spring torque, and mounting configuration.</li>
-      <li>Produced a final-intent integration concept showing how the system could be scaled and mounted onto BurnBot for real-world operation.</li>
+      <li>Produced a final integration concept CAD showing how the system could be scaled and mounted onto BurnBot for real-world operation.</li>
       <li>Created a robust, modular design tailored for harsh outdoor environments involving water exposure, vibration, and intermittent high-temperature conditions.</li>
     </ul>
     <p><strong>Project Poster 🖼️:</strong></p>
